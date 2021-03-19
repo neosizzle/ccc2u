@@ -19,10 +19,15 @@ app.use(express.static(publicDirPath))
 
 
 //index endpoint
-app.get('/' , (req,res)=>{
+app.get('' , (req,res)=>{
     res.render("../public/index.html")
-}) 
+})
 
+//The 404 Route (ALWAYS Keep this as the last route)
+
+app.get('*', function(req, res){
+    res.status(404).sendFile(`${publicDirPath}/404.html`);
+  });
 
 //start the web server and listen on port
 app.listen(port , ()=>{

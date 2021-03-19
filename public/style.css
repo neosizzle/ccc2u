@@ -1,12 +1,5 @@
 /*Start of Global*/
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 html{
-    font-size: 10px;
     font-family: 'Roboto', sans-serif ;
     color: #000;
 }
@@ -40,6 +33,67 @@ img{
 /*End of Global*/
 
 /* Start of Reusable */
+
+nav{
+    margin-bottom: 1%;
+}
+
+
+.ccc-block{
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.ccc-block:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-image: url('images/products/sky garden.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+  }
+
+.ccc-block:hover{
+    opacity: 1;
+}
+
+  .ccc-details {
+    position: relative;
+  }
+
+  
+
+.cycle-of-life-block{
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.cycle-of-life-block:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-image: url('images/products/sky garden.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+  }
+
+  .cycle-of-life-details {
+    position: relative;
+  }
 
 
 /* End of Reusable */
