@@ -2,6 +2,7 @@
 html{
     font-family: 'Roboto', sans-serif ;
     color: #000;
+    /* filter: invert(1) hue-rotate(180deg); */
 }
 
 body{
@@ -36,8 +37,8 @@ h1{
 }
 
 .navbar-brand img{
-    height: 60px;
-    width: 60px;
+    height: 4rem;
+    width: 11rem;
 }
 
 .navbar-text{
@@ -146,14 +147,7 @@ nav{
 /* End of Reusable */
 
 /* Start of slider */
-.carousel-item{
-    height: 100vh;
-}
 
-.d-block w-100{
-    width: 100%;
-    height: 100%;
-}
 
 /* Start of slider */
 
@@ -161,7 +155,7 @@ nav{
 .videowrapper{
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 25px;
+    padding-top: 4rem;
     height: 0px;
 }
 
