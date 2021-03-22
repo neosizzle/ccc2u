@@ -32,7 +32,7 @@ img{
 }
 
 h1{
-    border-bottom: 2px solid rgb(212, 200, 200);
+    border-bottom: 2px solid rgb(214, 212, 107);
 }
 
 .navbar-brand img{
@@ -59,10 +59,16 @@ h1{
       
 }
 
+.nav-link:hover{
+    color: black;
+}
+
 .nav-item:hover:after{
     width: 100%; 
     left: 0;
+
 }
+
 
 .footer-container{
     border-top: 1px solid rgb(219, 209, 209);
