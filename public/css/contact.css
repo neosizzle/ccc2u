@@ -1,0 +1,48 @@
+/**contact.html styling**/
+
+p{
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.contact-block{
+    margin : 2%;
+}
+
+.list-group-item{
+    margin: 2%;
+    padding: 2%;
+}
+
+.contact-icon{
+    max-width: 5%;
+    max-height: 5%;
+}
+
+.custom-select{
+    min-width: 100%;
+    min-height: 3rem;
+}
+
+.form-group{
+    margin: 2%;
+}
+
+#messageInput{
+    min-height: 4rem;
+}
+
+.btn-primary{
+    background-color: rgb(214, 212, 107);
+    border-color: rgb(214, 212, 107);
+    min-width: 100%;
+}
+
+.btn.btn-primary:hover{
+    background-color: rgb(177, 175, 92) ;
+    border-color: rgb(177, 175, 92);
+}
+
+.map-icon{
+    margin: 5%;
+}
