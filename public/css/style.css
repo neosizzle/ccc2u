@@ -148,7 +148,7 @@ h1{
 /* Start of slider */
 
 .slider-container{
-    padding : 5%;
+    padding-bottom : 5%;
 }
 
 /* End of slider */
@@ -156,6 +156,7 @@ h1{
 /*Start of video */
 .video{
     padding: 5%;
+    background: url("../images/assets/marble-bg.jpg");
   
 }
 

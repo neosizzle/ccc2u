@@ -1,12 +1,16 @@
 /**contact.html styling**/
 
+/*start global*/
 p{
     font-size: 1rem;
     font-weight: 100;
 }
+/*end global*/
 
+/*contact block*/
 .contact-block{
     margin : 2%;
+    padding-bottom: 1%;
 }
 
 .list-group-item{
@@ -42,6 +46,8 @@ p{
     background-color: rgb(177, 175, 92) ;
     border-color: rgb(177, 175, 92);
 }
+
+/*end contact block*/
 
 .map-icon{
     margin: 5%;
