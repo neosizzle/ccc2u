@@ -170,6 +170,16 @@ h1{
     .iframe-content {
         height: 20rem;
     }
+
+    section{
+        padding : 4rem;
+    }
+
+    h1{
+        border-bottom: 2px solid rgb(214, 212, 107);
+        font-size: x-large;
+    }
+
   }
 /*screen constraints end*/
 
