@@ -26,6 +26,7 @@ button:active{
 
 button:focus{
     background-color: rgb(214, 212, 107);
+    outline: none;
 
 }
 

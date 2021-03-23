@@ -1,3 +1,6 @@
+/**styling for individual writeups on aboutus**/
+/**global start**/
+
 p{
     font-size: 1rem;
     font-weight: thin;
@@ -8,6 +11,11 @@ img{
     max-width: 50rem;
     max-height: 50rem;
 }
+
+/**global end**/
+
+/**scrollbar start**/
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -31,6 +39,10 @@ img{
     background: #555;
   }
 
+  /**scrollbar end**/
+
+/**content start**/
 .content-container{
     padding:4%;
 }
+/**content end**/

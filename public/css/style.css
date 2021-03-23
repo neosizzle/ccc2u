@@ -163,10 +163,12 @@ h1{
     height: 40rem;
 }
 
+/*screen constraints start*/
 @media only screen and (max-width: 600px) {
     .iframe-content {
         height: 20rem;
     }
   }
+/*screen constraints end*/
 
 /*End of video */

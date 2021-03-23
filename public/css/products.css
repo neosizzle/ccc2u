@@ -1,17 +1,18 @@
 /**styling for products.html**/
 
 /**global start**/
-@media only screen and (max-width: 600px) {
-    .menu-container{
-        font-size: small;
-    }
-  }
+
+a:focus{
+    outline: none;
+}
+
 /**global end**/
 
 /**products menu start**/
 
 .products-container{
     padding:2%;
+    overflow-x: hidden;
 }
 
 .menu-container{
@@ -24,15 +25,32 @@
 .list-group-item:focus{
     background-color: rgb(214, 212, 107);
     border-color: rgb(214, 212, 107);
+
 }
 
 /**products menu end**/
 
 /**iframe contents start**/
-.iframe-container{
-    height: max-content;
-}
-
 .iframe-content{
     height: 40rem;
+    width: 100%;
 }
+
+/**iframe contents end**/
+
+/*screen constraints start*/
+@media only screen and (max-width: 600px) {
+    .menu-container{
+        font-size: small;
+    }
+
+
+    .products-container{
+        padding:2%;
+        overflow-x: hidden;
+        max-height: 30rem;
+    }
+
+  }
+
+  /*screen constraints end*/
