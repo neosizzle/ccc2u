@@ -13,7 +13,6 @@ h2{
 img{
     max-width: 50rem;
     max-height: 50rem;
-    margin: 2rem;
 }
 
 
@@ -54,7 +53,24 @@ img{
 }
 /*download link end*/
 
+/*slider start*/
+.slider-container{
+  padding : 0;
+}
+/*slider end */
+
+/**img container start**/
+.img-container{
+  margin: 2rem;
+}
+/*img container end*/
+
 /**writeup content start**/
+
+.content-container{
+  padding: 3rem;
+}
+
 .content{
     height: 38rem;
     width : 100%;
@@ -64,6 +80,11 @@ img{
 
 /*screen constraints start*/
 @media only screen and (max-width: 600px) {
+
+  h2{
+    font-size:large;
+  }
+
     p{
         font-size: small;
     }
@@ -71,9 +92,15 @@ img{
     img{
         max-width: 60rem;
         max-height: 60rem;
-        margin: .5rem;
     }
 
+    .content-container{
+      padding: .25rem;
+    }
+    
+    .img-container{
+      margin: .5rem;
+    }
   }
 
   /*screen constraints  end*/

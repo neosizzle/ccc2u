@@ -28,6 +28,7 @@ a:focus{
 
 }
 
+
 /**products menu end**/
 
 /**iframe contents start**/
@@ -42,6 +43,10 @@ a:focus{
 @media only screen and (max-width: 600px) {
     .menu-container{
         font-size: small;
+    }
+
+    .list-group-item{
+        padding: .25rem;
     }
 
 
