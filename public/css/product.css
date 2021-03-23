@@ -17,6 +17,7 @@ img{
 }
 
 
+
 /**scrollbar start**/
 
 
@@ -45,6 +46,13 @@ img{
   /**scrollbar end**/
 
 /**global end**/
+
+
+/*pdf download link start*/
+.download-link{
+  color: rgb(214, 212, 107);
+}
+/*download link end*/
 
 /**writeup content start**/
 .content{
