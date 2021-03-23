@@ -32,5 +32,5 @@ app.get('*', function(req, res){
 //start the web server and listen on port
 app.listen(port , ()=>{
     console.log("Server up and running at port " + port)
-    console.log("If you are developing on localhost, type localhost:" + port + " in your browser to access the app")
+    console.log("If you are developing on localhost, type localhost:" + 3000 + " in your browser to access the app")
 })
