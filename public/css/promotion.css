@@ -1,0 +1,41 @@
+/**styling for promotion.html**/
+
+/*promotion container start (coming soon)*/
+
+.bg-image{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.promotion{
+    padding: 0;
+}
+
+.promotion-container{
+    min-height: 100vh;
+    
+}
+
+
+.promotion-details{
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    margin: auto;
+    transform: translate(0,25vh);
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+
+  
+}
