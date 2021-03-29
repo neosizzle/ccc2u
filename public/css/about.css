@@ -1,5 +1,10 @@
 /**about.html styling**/
 
+/*start of bg illustration*/
+.bg-illus{
+    min-height: 40vh;
+}
+/*end of bg illustration*/
 
 /*start of section buttons*/
 .button-custom{
@@ -72,3 +77,13 @@ iframe{
   }
 
 /* End of milestone */
+
+/*screen constraints*/
+/*screen constraints start*/
+@media only screen and (max-width: 800px) {
+    .bg-illus{
+        display: none;
+    }
+
+  }
+/*screen constraints end*/
