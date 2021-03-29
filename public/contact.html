@@ -80,7 +80,7 @@
 
             <!--bg illustration start-->
             <div class="bg-illus">
-              
+
             </div>
 
             <!--bg illustration end-->
@@ -136,7 +136,7 @@
 
                                 <!--email query start-->
                                 <div class = "email-query-container">
-                                    <form>
+                                    <form  id = "enquiry-form">
                                             <select class="custom-select" id="enquiryType">
                                                 <option selected value="default">Please Choose an Enquiry Topic</option>
                                                 <option value="general-enquiries">General Enquiries</option>
@@ -147,23 +147,23 @@
 
                                         <div class="form-group">
                                             <label for="nameInput">Full Name</label>
-                                            <input type="name" class="form-control" id="nameInput" placeholder="Enter your Full Name here">
+                                            <input required type="name" class="form-control" id="nameInput" placeholder="Enter your Full Name here">
                                             </div>
 
                                         <div class="form-group">
                                           <label for="exampleInputEmail1">Email Address</label>
-                                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Email here">
+                                          <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Email here">
                                           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="sujectInput">Subject</label>
-                                            <input type="text" autocomplete = "off" class="form-control" id="subjectInput" placeholder="Enter your Subject here">
+                                            <input required type="text" autocomplete = "off" class="form-control" id="subjectInput" placeholder="Enter your Subject here">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="messageInput">Message</label>
-                                                <input type="text" autocomplete = "off" class="form-control" id="messageInput" placeholder="Enter your Message here">
+                                                <input requried type="text" autocomplete = "off" class="form-control" id="messageInput" placeholder="Enter your Message here">
                                                 </div>
 
     
@@ -274,6 +274,7 @@
     <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>-->
     <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
     <script src="./js/scroll.js" defer></script>
+    <script src="./js/contact.js" defer></script>
 
     
 
