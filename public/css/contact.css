@@ -7,6 +7,13 @@ p{
 }
 /*end global*/
 
+/*bg illustration start*/
+.bg-illus{
+    min-height: 40vh;
+}
+/*bg illus end*/
+
+
 /*contact block*/
 .contact-block{
     margin : 2%;
@@ -24,7 +31,7 @@ p{
 }
 
 .custom-select{
-    min-width: 100%;
+    width: 100%;
     min-height: 3rem;
 }
 
@@ -52,3 +59,12 @@ p{
 .map-icon{
     margin: 5%;
 }
+
+/*screen constraints start*/
+@media only screen and (max-width: 800px) {
+    .bg-illus{
+        display: none;
+    }
+
+  }
+/*screen constraints end*/

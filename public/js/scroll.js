@@ -1,6 +1,8 @@
 initNav = document.getElementById("init-nav-container");
 scrollNav = document.getElementById("scroll-nav");
 
+
+//fuction that hides the navbar when reached a certain scroll point
 var myScrollFunc = function() {
     var y = window.scrollY;
     if (y >= 200) {
