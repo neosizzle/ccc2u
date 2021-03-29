@@ -6,6 +6,7 @@ a:focus{
     outline: none;
 }
 
+
 /**global end**/
 
 /**bg illustration start**/
@@ -113,8 +114,5 @@ a:focus{
   /*screen constraints end*/
 
 /* start of tablet image */
-  img.tablet{
-      clip: rect(0px, 0px,200px, 0px);
-  }
 
   /* end of tablet image */
