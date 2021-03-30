@@ -5,6 +5,10 @@ p{
     font-size: 1rem;
     font-weight: 100;
 }
+
+footer{
+    text-align: center;
+}
 /*end global*/
 
 /*bg illustration start*/
@@ -26,6 +30,7 @@ p{
 .list-group-item{
     margin: 2%;
     padding: 2%;
+    z-index: -1;
 }
 
 .contact-icon{
