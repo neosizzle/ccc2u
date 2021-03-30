@@ -27,10 +27,15 @@ footer{
     padding-bottom: 1%;
 }
 
+
+
 .list-group-item{
     margin: 2%;
     padding: 2%;
-    z-index: -1;
+}
+
+.list-group-item:hover{
+   z-index: 0;
 }
 
 .contact-icon{
