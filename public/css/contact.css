@@ -9,8 +9,11 @@ p{
 
 /*bg illustration start*/
 .bg-illus{
+    background-image: url('../images/products/klcclong-min.jpg');
+    background-size:cover ;
     min-height: 40vh;
-}
+  
+  }
 /*bg illus end*/
 
 

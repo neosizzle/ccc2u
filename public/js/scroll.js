@@ -5,7 +5,7 @@ scrollNav = document.getElementById("scroll-nav");
 //fuction that hides the navbar when reached a certain scroll point
 var myScrollFunc = function() {
     var y = window.scrollY;
-    if (y >= 200) {
+    if (y >= 265) {
       scrollNav.className = "navbar navbar-expand-lg navbar-light bg-light show"
     } else {
       scrollNav.className = "navbar navbar-expand-lg navbar-light bg-light hide"
