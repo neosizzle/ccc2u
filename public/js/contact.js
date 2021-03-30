@@ -45,9 +45,10 @@ form.addEventListener("submit" , (event)=>{
     .then(response => response.json())
     .then((data)=>{
         if(data.error){
-            alert(data.error)
+            console.log(data.error)
         }else{
-            alert("succ")
+            console.log(data)
+            
         }
     })
 
