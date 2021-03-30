@@ -18,21 +18,21 @@
     cursor: pointer;
     border: solid;
     border-width: .1rem;
-    border-color: rgb(214, 212, 107);
+    border-color: #C69F52;
     border-radius: .25rem;
 }
 
 .button-custom:hover{
-    background-color: rgb(214, 212, 107);
+    background-color: #C69F52;
 
 }
 
 .button-custom:active{
-    background-color: rgb(168, 167, 88);
+    background-color: #C69F52;
 }
 
 .button-custom:focus{
-    background-color: rgb(214, 212, 107);
+    background-color: #C69F52;
     outline: none;
 
 }
@@ -59,7 +59,7 @@ iframe{
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #cd9557;
+    background-color: #C69F52;
     opacity: 0.7;
     z-index: 1;
 }

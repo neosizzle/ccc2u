@@ -17,7 +17,7 @@ body{
 }
 
 section{
-    padding: 6rem 0;
+    padding: 3rem 0;
 }
 
 a{
@@ -45,6 +45,7 @@ h1{
 .show{
     display: block;
 }
+
 
 .init-nav-container{
     min-height: 40vh;
@@ -252,7 +253,7 @@ h1{
     }
 
     h1{
-        border-bottom: 2px solid rgb(214, 212, 107);
+        border-bottom: 2px solid #C69F52;
         font-size: x-large;
     }
 
