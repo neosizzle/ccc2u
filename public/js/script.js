@@ -1,26 +1,6 @@
 // To prevent "save image as"
 var message="Right-click has been disabled";
 
-console.log(self.location.host)
-
-
-// //send post request to server
-// fetch("https://api.ipify.org/?format=json")
-// .then(response => response.json())//parse response into readable json
-// .then((data)=>{
-//     //error handling
-//     if(data.error){
-
-//     }else{
-//         console.log(data)
-//     }
-// })
-// .catch(
-//     (error)=>{
-
-//     }
-// )
-
 function clickIE() {
     if (document.all) {
         (message);
