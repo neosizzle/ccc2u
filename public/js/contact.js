@@ -1,7 +1,12 @@
 form = document.getElementById("enquiry-form")
+feedback = document.getElementById("email-feedback")
+feedbackContainer = document.getElementById("email-feedback-container")
+feedbackStatus = document.getElementById("email-feedback-status")
+feedbackMessage = document.getElementById("email-feedback-message")
+feedbackBtn = document.getElementById("email-feedback-button")
 
 
-
+//add form listner to send email twhen submitted
 form.addEventListener("submit" , (event)=>{
 
     //prevent page from refreshing
@@ -31,7 +36,7 @@ form.addEventListener("submit" , (event)=>{
 
 
     //send post request to server
-
+    //declare request oprions
     url = '/sendEmail'
     params = {
         headers : {
@@ -41,18 +46,37 @@ form.addEventListener("submit" , (event)=>{
         method : "POST"
     }
 
+    //send post request to server
     fetch(url , params)
-    .then(response => response.json())
+    .then(response => response.json())//parse response into readable json
     .then((data)=>{
+        //error handling
         if(data.error){
-            console.log(data.error)
+            feedbackStatus.textContent = 'Oops!'
+            feedbackMessage.innerHTML = ` Something wrong happened! We are very sorry.<br> Code : ${data.error.code}`
+            feedback.className = "jumbotron email-feedback bg-white failure showFb"
+            feedbackContainer.className = 'email-feedback-container d-flex justify-content-center showFb' // show feedback div
         }else{
-            console.log(data)
+            feedbackStatus.textContent = 'Success!'
+            feedbackMessage.innerHTML = ` Thank you! We will reach out to you as soon as possible. `
+            feedback.className = "jumbotron email-feedback bg-white success showFb"
+            feedbackContainer.className = 'email-feedback-container d-flex justify-content-center showFb'  // show feedback div
             
         }
     })
+    .catch(
+        (error)=>{
+
+        }
+    )
 
 
 
 
 } )
+
+//add btn event listener to close the feedback div
+feedbackBtn.addEventListener("click", (event)=>{
+    feedback.className = "jumbotron email-feedback bg-white hide"
+    feedbackContainer.className = 'email-feedback-container d-flex justify-content-center hide' // close feedback div
+})

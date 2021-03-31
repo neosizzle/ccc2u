@@ -25,6 +25,7 @@ footer{
 .contact-block{
     margin : 2%;
     padding-bottom: 1%;
+    z-index: 0;
 }
 
 
@@ -67,17 +68,69 @@ footer{
     border-color: rgb(177, 175, 92);
 }
 
+.btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: rgb(177, 175, 92) ;
+    border-color: rgb(177, 175, 92);
+}
+
 /*end contact block*/
 
 .map-icon{
     margin: 5%;
 }
 
+/*email feedback start*/
+.email-feedback-container{
+    width: 100%;
+    position:absolute;
+    top: 50%;
+    background-color: transparent;
+    height: 30rem;
+    z-index: -1;
+}
+
+.email-feedback{
+    z-index: -1;
+    width: 50%;
+    height: 20rem;
+    border-radius: 2rem;
+    border: solid 2px silver;
+}
+
+#email-feedback-message{
+    margin: 3%;
+}
+
+
+
+.success{
+    border: solid 2px rgb(126, 228, 126);
+}
+
+.failure{
+    border: solid 2px rgb(228, 126, 126);
+}
+
+.showFb{
+    z-index: 1;
+}
+
+.hideFb{
+    z-index: -1;
+}
+
+
+
+/*email feedback end */
+
 /*screen constraints start*/
 @media only screen and (max-width: 800px) {
     .bg-illus{
         display: none;
     }
+
+
 
   }
 /*screen constraints end*/

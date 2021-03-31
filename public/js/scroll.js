@@ -23,6 +23,7 @@ window.onresize = ()=>{
     if(screen.width > 800){
         window.addEventListener("scroll", myScrollFunc);
       }else{
+
         window.removeEventListener("scroll", myScrollFunc);
       }
 }
