@@ -24,3 +24,6 @@ if (document.layers) {
 }
 document.oncontextmenu = new Function("return false");
 document.getElementsByClassName('my-img').ondragstart = function() { return false; };
+
+
+//footer translation icon script

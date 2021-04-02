@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap');
+
 /*Start of Global*/
 html{
     font-family: 'Roboto', sans-serif ;
@@ -9,6 +11,7 @@ html{
 }
 
 body{
+    /* font-family: 'Noto Sans SC', sans-serif; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     width: 100%;
@@ -59,7 +62,7 @@ h1{
 }
 
 .init-nav-content-container{
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans SC', sans-serif;
     font-size: 1.3rem;
     min-height: 10vh;
     width: 100%;
@@ -166,6 +169,33 @@ h1{
     border-width: 5px;
     padding : 2%
 }
+
+.col-flex {
+    display: flex;
+    align-items: center;
+ }
+
+.dropdown-toggle{
+    border: 1px solid  #C69F52;
+}
+
+.dropdown-toggle:hover{
+    border: 2px solid #C69F52;
+}
+
+.dropdown-menu{
+    min-width: 5rem;
+    max-width: 5rem;
+}
+
+
+
+.btn:focus,.btn:active {
+    outline: none;
+    box-shadow: none;
+ }
+
+
 
 /*End of Global*/
 
@@ -294,6 +324,10 @@ h1{
         animation-timing-function: ease-in;
         animation-duration: 0.3s;
     }
+
+    .col-flex {
+        display: block;
+     }
 
   }
 /*screen constraints end*/

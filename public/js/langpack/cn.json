@@ -1,0 +1,23 @@
+{
+	"token": {
+        "home": "首页",
+        "about-us":"关于我们",
+		"products-services": "产品与服务",
+		"promotions": "促销",
+		"contact": "联系我们",
+        "ccc":"吉隆坡城中城",
+        "ccc-writeup":"CITY CENTRE COLUMBARIUM城中城的地理位置优越，位于吉隆坡市中心（Sungai Besi），距离著名的国油双峰塔（Petronas Twin Towers）只有短短的5分钟车程，它的高级骨灰塔及殡仪馆的概念是经过规划，设计，创新，技术和各个方面的专业考量而成。CITY CENTRE COLUMBARIUM已正式注册为骨灰塔及纪念馆，计划于2021年开始建设，总共有15层楼高，以及拥有4层地下停车场和其他的服务楼层。这项独特的高级骨灰城及纪念馆将成为马来西亚最时尚的建设之一，并采用先进化的管理系统。它的设计与建造可历经时空的考验，宏伟的建筑工艺与都市人的宗教信仰，是文化与习俗互相融合的交汇点。 City Centre Columbarium城中城反映了光影的和谐交融，在城内持续发展。城中城豪立在吉隆坡市内，从高空俯瞰城市，让维护亲人记忆中扮演着重要角色. ",
+        "cycle-of-life" : "生命循环",
+        "cycle-of-life-writeup" : "生命循环有如秋天的落叶，冬天的飘雪，直至春天的花开。生命有其盼望和奇迹，幸福与安宁，家人和朋友的快乐，以及离开的悲伤。怀念和珍惜逝去的时光与记忆，这是我们内心所爱之人的安息住所，让我们的子孙后代永恒怀念。 CITY CENTRE COLUMBARIUM城中城是多元人生的终点站。",
+        "welcome-to-ccc" : "欢迎来到CCC",
+        "address" : "地址",
+		"tel" : "电话",
+		"email" : "电邮",
+		"portals" : "门户",
+		"member-portal" : "会员登入",
+		"agent-portal" : "代理人登入",
+        "translationWithDataObject": "My dynamic user data is First Name: ${data.firstName} and Last Name: ${data.lastName}",
+		"translationWithDataString": "My dynamic string is ${data}!",
+		"translationWithDataArray": "My dynamic string is ${data.0}, ${data.1}!"
+	}
+}

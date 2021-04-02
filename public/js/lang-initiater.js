@@ -1,4 +1,4 @@
-
+//thank you https://github.com/Irrelon/jquery-lang-js
 // Create language switcher instance
 var lang = new Lang();
 
@@ -12,12 +12,14 @@ handles, the pack is then requested from the server
 // Define the thai language pack as a dynamic pack to be loaded on demand
 // if the user asks to change to that language. We pass the two-letter language
 // code and the path to the language pack js file
-lang.dynamic('th', 'js/langpack/th.json');
 lang.dynamic('en', 'js/langpack/en.json');
+lang.dynamic('cn', 'js/langpack/cn.json');
+
+
 
 
 //initializes english as default language
 lang.init({
-  defaultLang: 'th'
+  defaultLang: 'en'
 });
 
