@@ -12,14 +12,29 @@ handles, the pack is then requested from the server
 // Define the thai language pack as a dynamic pack to be loaded on demand
 // if the user asks to change to that language. We pass the two-letter language
 // code and the path to the language pack js file
+
+
+try{
+//get default lang from window component (EMBEDDE IFRAMES ONLY)
+var defaultLang = window.frameElement.getAttribute('customLang') || 'en'
+
+//loading langpacks
+lang.dynamic('en', '../../js/langpack/en.json');
+lang.dynamic('cn', '../../js/langpack/cn.json');
+
+}
+catch{
+var defaultLang = 'en'
+
+//loading langpacks
 lang.dynamic('en', 'js/langpack/en.json');
 lang.dynamic('cn', 'js/langpack/cn.json');
-
-
-
+}
 
 //initializes english as default language
 lang.init({
-  defaultLang: 'en'
+  defaultLang
 });
 
+//changes language 
+window.lang.change(defaultLang)
