@@ -52,6 +52,7 @@
 		"never-share-email" : "We'll never share your email with anyone else.",
 		"subject" : "Subject",
 		"submit" : "Submit",
+		"message" : "Message",
 		"find-us" : "Find us!",
 		"translationWithDataObject": "My dynamic user data is First Name: ${data.firstName} and Last Name: ${data.lastName}",
 		"translationWithDataString": "My dynamic string is ${data}!",
