@@ -79,7 +79,7 @@
  
           </section>
 
-                <!-- start footer -->
+      <!-- start footer -->
       <footer class="bg-white text-center text-lg-start">
         <!-- Grid container -->
         <div class="container p-4 footer-container">
@@ -126,6 +126,7 @@
                     window.lang.change('en');
                     document.getElementById('active-lang-img').src = 'images/assets/icons/british-icon.png'; 
                     document.getElementById('active-lang').innerText = 'English'
+                    document.cookie = 'lang=en';//set lang cookie
     
     
                     return false;
@@ -136,6 +137,7 @@
                   window.lang.change('cn');
                   document.getElementById('active-lang-img').src = 'images/assets/icons/china-icon.png';
                   document.getElementById('active-lang').innerText = '简体中文'
+                  document.cookie = 'lang=cn';//set lang cookie
     
                     return false;" class="dropdown-item" href="#"><img style = "height: 2rem; width: 2rem;" src = "images/assets/icons/china-icon.png">简体中文</a>
                 </div>

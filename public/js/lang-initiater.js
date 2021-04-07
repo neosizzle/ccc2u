@@ -13,10 +13,27 @@ handles, the pack is then requested from the server
 // if the user asks to change to that language. We pass the two-letter language
 // code and the path to the language pack js file
 
+//function for getting browser cookie
+const getCookie = (cname)=>{
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
 
 try{
-//get default lang from window component (EMBEDDE IFRAMES ONLY)
-var defaultLang = window.frameElement.getAttribute('customLang') || 'en'
+//get default lang from window component (EMBEDDED IFRAMES ONLY)
+var defaultLang = getCookie('lang') || window.frameElement.getAttribute('customLang') || 'en'
 
 //loading langpacks
 lang.dynamic('en', '../../js/langpack/en.json');
@@ -24,7 +41,8 @@ lang.dynamic('cn', '../../js/langpack/cn.json');
 
 }
 catch{
-var defaultLang = 'en'
+
+var defaultLang = getCookie('lang') || 'en' //conditional variable for language
 
 //loading langpacks
 lang.dynamic('en', 'js/langpack/en.json');

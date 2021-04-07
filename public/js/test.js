@@ -1,23 +1,37 @@
+// To prevent "save image as"
+var message="Right-click has been disabled";
 
-// Create language switcher instance
-var lang = new Lang();
+function clickIE() {
+    if (document.all) {
+        (message);
+        return false;
+    }
+}
+function clickNS(e) {
+    if (document.layers || (document.getElementById && !document.all)) {
+        if (e.which == 2||e.which == 3) {
+            (message);
+            return false;
+        }
+    }
+}
+if (document.layers) {
+    document.captureEvents(Event.MOUSEDOWN);
+    document.onmousedown = clickNS;
+} else {
+    document.onmouseup = clickNS;
+    document.oncontextmenu = clickIE;
+}
+document.oncontextmenu = new Function("return false");
+document.getElementsByClassName('my-img').ondragstart = function() { return false; };
 
-/*
-PLEASE NOTE You MUST declare your dynamic language packs BEFORE calling the init() method. 
-Declaring your pack via the dynamic() method does not load your pack from the server, 
-it just tells the library WHERE the pack is so that when the language is switched to the one the pack 
-handles, the pack is then requested from the server
-*/
 
-// Define the thai language pack as a dynamic pack to be loaded on demand
-// if the user asks to change to that language. We pass the two-letter language
-// code and the path to the language pack js file
-lang.dynamic('th', 'js/langpack/th.json');
-lang.dynamic('en', 'js/langpack/en.json');
-
-
-//initializes english as default language
-lang.init({
-  defaultLang: 'th'
-});
+//checks current language used and change lang dropdown accordingly
+if(window.lang.currentLang == 'en'){
+  document.getElementById('active-lang-img').src = 'images/assets/icons/british-icon.png'; 
+  document.getElementById('active-lang').innerText = 'English'
+}else if(window.lang.currentLang == 'cn'){
+  document.getElementById('active-lang-img').src = 'images/assets/icons/china-icon.png';
+  document.getElementById('active-lang').innerText = '简体中文'
+}
 

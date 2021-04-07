@@ -115,92 +115,95 @@
         <!--iframe end-->
 
 
-      <!-- start footer -->
-      <footer class="bg-white text-center text-lg-start">
-        <!-- Grid container -->
-        <div class="container p-4 footer-container">
-          <!--Grid row-->
-          <div class="row">
-            <!--Grid column-->
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0 p-5">
-              <h5 class="text-uppercase" lang="en" data-lang-token="contact">Contact us</h5>
+        <!-- start footer -->
+        <footer class="bg-white text-center text-lg-start">
+          <!-- Grid container -->
+          <div class="container p-4 footer-container">
+            <!--Grid row-->
+            <div class="row">
+              <!--Grid column-->
+              <div class="col-lg-6 col-md-12 mb-4 mb-md-0 p-5">
+                <h5 class="text-uppercase" lang="en" data-lang-token="contact">Contact us</h5>
+        
+                <p class = "footer-content">
+                  <span lang="en" data-lang-token="address">Address</span>: D-01-04 Southgate Commercial Centre No. 2, Jalan Dua, Off, Jalan Chan Sow Lin, Chan Sow Lin, 55200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia<br><br>
+                  <span lang="en" data-lang-token="tel">Tel</span>: +603-2142 2577<br><br>
+                  <span lang="en" data-lang-token="email">Email</span>: enquiry@ccc2u.com
       
-              <p class = "footer-content">
-                <span lang="en" data-lang-token="address">Address</span>: D-01-04 Southgate Commercial Centre No. 2, Jalan Dua, Off, Jalan Chan Sow Lin, Chan Sow Lin, 55200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia<br><br>
-                <span lang="en" data-lang-token="tel">Tel</span>: +603-2142 2577<br><br>
-                <span lang="en" data-lang-token="email">Email</span>: enquiry@ccc2u.com
-    
-              </p>
-            </div>
-            <!--Grid column-->
+                </p>
+              </div>
+              <!--Grid column-->
+        
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4 mb-md-0 p-5">
+                <h5 class="text-uppercase mb-0" lang="en" data-lang-token="portals">Portals</h5>
+        
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#!" class="text-dark" lang="en" data-lang-token="member-portal">Member portal</a>
+                  </li>
+                  <li>
+                    <a href="#!" class="text-dark" lang="en" data-lang-token="agent-portal">Agent portal</a>
+                  </li>
       
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 p-5">
-              <h5 class="text-uppercase mb-0" lang="en" data-lang-token="portals">Portals</h5>
+                </ul>
+              </div>
+              
       
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!" class="text-dark" lang="en" data-lang-token="member-portal">Member portal</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-dark" lang="en" data-lang-token="agent-portal">Agent portal</a>
-                </li>
-    
-              </ul>
-            </div>
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4 mb-md-0 p-5 col-flex translation-container">
             
-    
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 p-5 col-flex translation-container">
-          
-              <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img id = "active-lang-img" style = "height: 2rem; width: 2rem;" src = "images/assets/icons/british-icon.png"> <span id = "active-lang">English</span>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a onclick="
+                <div class="dropdown">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img id = "active-lang-img" style = "height: 2rem; width: 2rem;" src = "images/assets/icons/british-icon.png"> <span id = "active-lang">English</span>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a onclick="
                       window.lang.change('en');
                       document.getElementById('active-lang-img').src = 'images/assets/icons/british-icon.png'; 
                       document.getElementById('active-lang').innerText = 'English'
                       document.getElementById('content-iframe').setAttribute('customLang' , 'en') //set custom iframe attribute
-
+                      document.cookie = 'lang=en';//set lang cookie
                       //trigger event in content iframe to change lang
                       $('#content-iframe')[0].contentWindow.$('body').trigger('lang-change')
-    
-    
-                    return false;
-                    " class="dropdown-item" href="#"><img style = "height: 2rem; width: 2rem;" src = "images/assets/icons/british-icon.png"> English</a>
-    
-                  <a onclick="
-                  
+      
+      
+                      return false;
+                      " class="dropdown-item" href="#"><img style = "height: 2rem; width: 2rem;" src = "images/assets/icons/british-icon.png"> English</a>
+      
+                    <a onclick="
+                    
                     window.lang.change('cn');
                     document.getElementById('active-lang-img').src = 'images/assets/icons/china-icon.png';
                     document.getElementById('active-lang').innerText = '简体中文'
                     document.getElementById('content-iframe').setAttribute('customLang' , 'cn') //set custom iframe attribute
+                    document.cookie = 'lang=cn';//set lang cookie
 
                     //trigger event in content iframe to change lang
                     $('#content-iframe')[0].contentWindow.$('body').trigger('lang-change')
-    
-                    return false;" class="dropdown-item" href="#"><img style = "height: 2rem; width: 2rem;" src = "images/assets/icons/china-icon.png">简体中文</a>
+
+      
+                      return false;" class="dropdown-item" href="#"><img style = "height: 2rem; width: 2rem;" src = "images/assets/icons/china-icon.png">简体中文</a>
+                  </div>
                 </div>
+                
               </div>
               
+              <!--Grid column-->
             </div>
-            
-            <!--Grid column-->
+            <!--Grid row-->
           </div>
-          <!--Grid row-->
-        </div>
-        <!-- Grid container -->
-      
-        <!-- start Copyright -->
-        <div class="text-center p-3" style="background-color: #C69F52;">
-          © 2020 Copyright:
-          <a class="text-dark">City Centre Columbarium</a>
-        </div>
-        <!-- end Copyright -->
-                </footer>
-        <!-- end Footer -->
+          <!-- Grid container -->
+        
+          <!-- start Copyright -->
+          <div class="text-center p-3" style="background-color: #C69F52;">
+            © 2020 Copyright:
+            <a class="text-dark">City Centre Columbarium</a>
+          </div>
+          <!-- end Copyright -->
+                  </footer>
+          <!-- end Footer -->
+
   <script src="./js/script.js" defer></script>
     <script src="js/scroll.js" defer></script>
     <script src="js/about.js" defer></script>
