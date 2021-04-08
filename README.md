@@ -1,17 +1,17 @@
 # CCC website sourcecode
-built with bootstrap and static html running on expess.js powered server on nodejs. You will need nodejs installed on your machine for it to run.
+you are required to install nodejs and mongodb locally for it to run. Thats all.
 
 
 ## Installation
 
-after forking or cloning the repository, run  `npm install` to install all the required dependencies required for the webpage to run
+after forking or cloning the repository, run  `npm install` to install all the required dependencies.
 
 
 ## Message for developers
 
 -server side code can be found in : `/src/....`
 
--public website assets and html fils can be found in : `/public/....`
+-public website assets and html files can be found in : `/public/....`
 
 dev script : `npm run dev`
 
