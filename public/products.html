@@ -26,66 +26,97 @@
 
     </head>
     <body>
-        <!--navbar start-->
+           <!--navbar start-->
 
-        <div class = "init-nav-container" id = "init-nav-container"></div>
-        <div class="init-nav-content-container">
-
-            <div class = "init-nav-brand  d-flex justify-content-center">
-              <a class="nav-brand" href="./index.html">
-                <img src="images/products/logo.png" alt="CCC logo">
-              </a> 
-
-            </div>
-
-            <div class = "init-nav-list">
-
-                <nav class="nav nav-fill">
-                    <a class="nav-item nav-link" lang = "en" data-lang-token="about-us" href="./about.html">About Us</a>
-                    <a class="nav-item nav-link" lang = "en" data-lang-token="products-services" href="./products.html">Products & Services</a>
-                    <a class="nav-item nav-link" lang = "en" data-lang-token="promotions" href="./promotions.html">Promotions</a>
-                    <a class="nav-item nav-link" lang = "en" data-lang-token="contact" href="./contact.html">Contact us</a>
-                  </nav>
-
-            </div>
-        </div>
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light hide" id = "scroll-nav">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">
-                    <img src="images/products/logo.png" alt="CCC logo">
-                  </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="nav nav-fill">
-                  <li class="nav-item">
-                    <a class="nav-link" lang="en" data-lang-token ="home" href="./index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" lang = "en" data-lang-token="about-us" href="./about.html">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" lang = "en" data-lang-token="products-services" href="./products.html">Products & Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" lang = "en" data-lang-token="promotions" href="./promotions.html">Promotions</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" lang = "en" data-lang-token="contact" href="./contact.html">Contact us</a>
-                  </li>
-                </ul>
-              </div>
-
-              <span class="navbar-text">
-                +603-2142 2577
-              </span>
-
-            </div>
-
-          </nav>
-          <!--navbar end-->
+           <div class = "init-nav-container" id = "init-nav-container"></div>
+           <div class="init-nav-content-container">
+ 
+               <div class = "init-nav-brand  d-flex justify-content-center">
+                 <a class="nav-brand" href="./index.html">
+                   <img src="images/products/logo.png" alt="CCC logo">
+                 </a> 
+ 
+               </div>
+ 
+               <div class = "init-nav-list">
+ 
+                   <nav class="nav nav-fill">
+                       <a class="nav-item nav-link" lang = "en" data-lang-token="about-us" href="./about.html">About Us</a>
+                       <a class="nav-item nav-link" lang = "en" data-lang-token="products-services" href="./products.html">Products & Services</a>
+                       <a class="nav-item nav-link" lang = "en" data-lang-token="promotions" href="./promotions.html">Promotions</a>
+                       <a class="nav-item nav-link" lang = "en" data-lang-token="contact" href="./contact.html">Contact us</a>
+                     </nav>
+ 
+               </div>
+           </div>
+ 
+           <nav class="navbar navbar-expand-lg navbar-light bg-light hide" id = "scroll-nav">
+               <div class="container-fluid">
+                   <a class="navbar-brand" href="./index.html">
+                       <img src="images/products/logo.png" alt="CCC logo">
+                     </a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+                 </button>
+                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                   <ul class="nav nav-fill">
+                     <li class="nav-item">
+                       <a class="nav-link" lang="en" data-lang-token ="home" href="./index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" lang = "en" data-lang-token="about-us" href="./about.html">About Us</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" lang = "en" data-lang-token="products-services" href="./products.html">Products & Services</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" lang = "en" data-lang-token="promotions" href="./promotions.html">Promotions</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" lang = "en" data-lang-token="contact" href="./contact.html">Contact us</a>
+                     </li>
+                   </ul>
+                 </div>
+ 
+                 <div class = "lang-container m-2">
+                   <div class="dropdown"> 
+                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       <span id = "active-lang">EN</span>
+                     </button>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                       <a onclick="
+                         window.lang.change('en');
+                         document.getElementById('active-lang').innerText = 'EN'
+                         document.getElementById('content-iframe').setAttribute('customLang' , 'en') //set custom iframe attribute
+                         //trigger event in content iframe to change lang
+                         $('#content-iframe')[0].contentWindow.$('body').trigger('lang-change')
+                         document.cookie = 'lang=en';//set lang cookie
+         
+         
+                         return false;
+                         " class="dropdown-item" href="#">EN</a>
+         
+                       <a onclick="
+                       
+                       window.lang.change('cn');
+                       document.getElementById('active-lang').innerText = '简体中文'
+                       document.getElementById('content-iframe').setAttribute('customLang' , 'cn') //set custom iframe attribute
+                        //trigger event in content iframe to change lang
+                       $('#content-iframe')[0].contentWindow.$('body').trigger('lang-change')
+                       document.cookie = 'lang=cn';//set lang cookie
+         
+                         return false;" class="dropdown-item" href="#">简体中文</a>
+                     </div>
+                   </div>
+                 </div>
+                 <span class="navbar-text">
+                   +603-2142 2577
+                 </span>
+ 
+               </div>
+ 
+             </nav>
+           <!--navbar end-->
 
           <!--bg illus start-->
 
@@ -130,94 +161,55 @@
 
           <!--products end-->
 
-        <!-- start footer -->
-        <footer class="bg-white text-center text-lg-start">
-          <!-- Grid container -->
-          <div class="container p-4 footer-container">
-            <!--Grid row-->
-            <div class="row">
-              <!--Grid column-->
-              <div class="col-lg-6 col-md-12 mb-4 mb-md-0 p-5">
-                <h5 class="text-uppercase" lang="en" data-lang-token="contact">Contact us</h5>
-        
-                <p class = "footer-content">
-                  <span lang="en" data-lang-token="address">Address</span>: D-01-04 Southgate Commercial Centre No. 2, Jalan Dua, Off, Jalan Chan Sow Lin, Chan Sow Lin, 55200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia<br><br>
-                  <span lang="en" data-lang-token="tel">Tel</span>: +603-2142 2577<br><br>
-                  <span lang="en" data-lang-token="email">Email</span>: enquiry@ccc2u.com
-      
-                </p>
-              </div>
-              <!--Grid column-->
-        
-              <!--Grid column-->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0 p-5">
-                <h5 class="text-uppercase mb-0" lang="en" data-lang-token="portals">Portals</h5>
-        
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="#!" class="text-dark" lang="en" data-lang-token="member-portal">Member portal</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-dark" lang="en" data-lang-token="agent-portal">Agent portal</a>
-                  </li>
-      
-                </ul>
-              </div>
-              
-      
-              <!--Grid column-->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0 p-5 col-flex translation-container">
-            
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img id = "active-lang-img" style = "height: 2rem; width: 2rem;" src = "images/assets/icons/british-icon.png"> <span id = "active-lang">English</span>
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a onclick="
-                      window.lang.change('en');
-                      document.getElementById('active-lang-img').src = 'images/assets/icons/british-icon.png'; 
-                      document.getElementById('active-lang').innerText = 'English'
-                      document.getElementById('content-iframe').setAttribute('customLang' , 'en') //set custom iframe attribute
-                      document.cookie = 'lang=en';//set lang cookie
-                      //trigger event in content iframe to change lang
-                      $('#content-iframe')[0].contentWindow.$('body').trigger('lang-change')
-      
-      
-                      return false;
-                      " class="dropdown-item" href="#"><img style = "height: 2rem; width: 2rem;" src = "images/assets/icons/british-icon.png"> English</a>
-      
-                    <a onclick="
-                    
-                    window.lang.change('cn');
-                    document.getElementById('active-lang-img').src = 'images/assets/icons/china-icon.png';
-                    document.getElementById('active-lang').innerText = '简体中文'
-                    document.getElementById('content-iframe').setAttribute('customLang' , 'cn') //set custom iframe attribute
-                    document.cookie = 'lang=cn';//set lang cookie
 
-                    //trigger event in content iframe to change lang
-                    $('#content-iframe')[0].contentWindow.$('body').trigger('lang-change')
-
+      <!-- start footer -->
+      <footer class="bg-white text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4 footer-container">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0 p-5">
+              <h5 class="text-uppercase" lang="en" data-lang-token="contact">Contact us</h5>
       
-                      return false;" class="dropdown-item" href="#"><img style = "height: 2rem; width: 2rem;" src = "images/assets/icons/china-icon.png">简体中文</a>
-                  </div>
-                </div>
-                
-              </div>
-              
-              <!--Grid column-->
+              <p class = "footer-content">
+                <span lang="en" data-lang-token="address">Address</span>: D-01-04 Southgate Commercial Centre No. 2, Jalan Dua, Off, Jalan Chan Sow Lin, Chan Sow Lin, 55200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia<br><br>
+                <span lang="en" data-lang-token="tel">Tel</span>: +603-2142 2577<br><br>
+                <span lang="en" data-lang-token="email">Email</span>: enquiry@ccc2u.com
+    
+              </p>
             </div>
-            <!--Grid row-->
+            <!--Grid column-->
+      
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 p-5">
+              <h5 class="text-uppercase mb-0" lang="en" data-lang-token="portals">Portals</h5>
+      
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#!" class="text-dark" lang="en" data-lang-token="member-portal">Member portal</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-dark" lang="en" data-lang-token="agent-portal">Agent portal</a>
+                </li>
+    
+              </ul>
+            </div>
+            <!--Grid column-->
+            
           </div>
-          <!-- Grid container -->
-        
-          <!-- start Copyright -->
-          <div class="text-center p-3" style="background-color: #C69F52;">
-            © 2020 Copyright:
-            <a class="text-dark">City Centre Columbarium</a>
-          </div>
-          <!-- end Copyright -->
-                  </footer>
-          <!-- end Footer -->
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- start Copyright -->
+        <div class="text-center p-3" style="background-color: #C69F52;">
+          © 2020 Copyright:
+          <a class="text-dark">City Centre Columbarium</a>
+        </div>
+        <!-- end Copyright -->
+                </footer>
+        <!-- end Footer -->
 
 
     <!-- Separate Popper and Bootstrap JS -->

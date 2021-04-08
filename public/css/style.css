@@ -145,6 +145,8 @@ h1{
 
 }
 
+
+
 .footer{
     background-color: white;
 }
@@ -317,10 +319,7 @@ h1{
         animation-duration: 0.3s;
     }
 
-    .dropdown-menu{
-        max-height: 6rem;
-    }
-
+   
   }
 /*screen constraints end*/
 
