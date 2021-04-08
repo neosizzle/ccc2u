@@ -36,7 +36,7 @@ app.post('/sendEmail' ,(req,res)=>{
       //send from transporter to receiver
       const mailOptions = {
         from: process.env.NODEMAILER_TRANS_EMAIL,
-        to: 'jh_ng@ymail.com',//receiver email
+        to: 'enquiry@ccc2u.com',//receiver email
         subject: 'Ccc2u customer email enquiry received ',
       };
 
