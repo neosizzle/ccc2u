@@ -28,9 +28,11 @@ document.getElementsByClassName('my-img').ondragstart = function() { return fals
 
 //checks current language used and change lang dropdown accordingly
 if(window.lang.currentLang == 'en'){
+    window.lang.change('en') //will cause langauage bug if no safeguard/doublecheck
   document.getElementById('active-lang-img').src = 'images/assets/icons/british-icon.png';// throws null pointer error here, safe to ignore so far.
   document.getElementById('active-lang').innerText = 'English'
 }else if(window.lang.currentLang == 'cn'){
+  window.lang.change('cn') //will cause bug if no safeguard/doublecheck
   document.getElementById('active-lang-img').src = 'images/assets/icons/china-icon.png'; // throws null pointer error here, safe to ignore so far.
   document.getElementById('active-lang').innerText = '简体中文'
 }

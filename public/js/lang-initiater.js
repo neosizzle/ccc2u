@@ -30,29 +30,110 @@ const getCookie = (cname)=>{
   return "";
 }
 
+//try to get lang cookie from browser
+var defaultLang = getCookie('lang')
 
-try{
-//get default lang from window component (EMBEDDED IFRAMES ONLY)
-var defaultLang = getCookie('lang') || window.frameElement.getAttribute('customLang') || 'en'
+//if cookie is not empty, render page in said language
+if(defaultLang != ''){
+    //renders for iframes
+    if(window.frameElement != null){
+      //loading langpacks
+      lang.dynamic('en', '../../js/langpack/en.json');
+      lang.dynamic('cn', '../../js/langpack/cn.json');
 
-//loading langpacks
-lang.dynamic('en', '../../js/langpack/en.json');
-lang.dynamic('cn', '../../js/langpack/cn.json');
+      //initializes english as default language
+        lang.init({
+          defaultLang
+        });
+
+        //changes language 
+        window.lang.change(defaultLang)
+
+        
+
+            }
+    else{//renders for normal windows
+      //loading langpacks
+      lang.dynamic('en', './js/langpack/en.json');
+      lang.dynamic('cn', './js/langpack/cn.json');
+
+      //initializes default language
+      lang.init({
+        defaultLang
+      });
+
+      //changes language 
+      window.lang.change(defaultLang)
+
+      
+      }
+    }
+
+
+//cookie is empty , render page in said language
+if(defaultLang == ''){
+
+      //renders for iframes
+      if(window.frameElement != null){
+        //loading langpacks
+        lang.dynamic('en', '../../js/langpack/en.json');
+        lang.dynamic('cn', '../../js/langpack/cn.json');
+  
+        //initializes english as default language
+          lang.init({
+            defaultLang : 'en'
+          });
+  
+          //changes language 
+          window.lang.change('en')
+  
+  
+              }
+      else{//renders for normal windows
+        //loading langpacks
+        lang.dynamic('en', './js/langpack/en.json');
+        lang.dynamic('cn', './js/langpack/cn.json');
+  
+        //initializes default language
+        lang.init({
+          defaultLang : 'en'
+        });
+  
+        //changes language 
+        window.lang.change('en')
+  
+        }
+
 
 }
-catch{
+    
 
-var defaultLang = getCookie('lang') || 'en' //conditional variable for language
 
-//loading langpacks
-lang.dynamic('en', 'js/langpack/en.json');
-lang.dynamic('cn', 'js/langpack/cn.json');
-}
 
-//initializes english as default language
-lang.init({
-  defaultLang
-});
+// console.log(getCookie('lang') == '')
 
-//changes language 
-window.lang.change(defaultLang)
+// try{
+// //get default lang from window component (EMBEDDED IFRAMES ONLY)
+// var defaultLang = getCookie('lang') || window.frameElement.getAttribute('customLang') || 'en'
+
+// //loading langpacks
+// lang.dynamic('en', '../../js/langpack/en.json');
+// lang.dynamic('cn', '../../js/langpack/cn.json');
+
+// }
+// catch{
+
+// var defaultLang = getCookie('lang') || 'en' //conditional variable for language
+
+// //loading langpacks
+// lang.dynamic('en', './js/langpack/en.json');
+// lang.dynamic('cn', './js/langpack/cn.json');
+// }
+
+// //initializes english as default language
+// lang.init({
+//   defaultLang
+// });
+
+// //changes language 
+// window.lang.change(defaultLang)
