@@ -1,5 +1,5 @@
-// To prevent "save image as"
-var message="Right-click has been disabled";
+// This script is to prevent right-click "save image as"
+var message = "Right-click has been disabled";
 
 function clickIE() {
     if (document.all) {
@@ -9,7 +9,7 @@ function clickIE() {
 }
 function clickNS(e) {
     if (document.layers || (document.getElementById && !document.all)) {
-        if (e.which == 2||e.which == 3) {
+        if (e.which == 2 || e.which == 3) {
             (message);
             return false;
         }
@@ -23,15 +23,15 @@ if (document.layers) {
     document.oncontextmenu = clickIE;
 }
 document.oncontextmenu = new Function("return false");
-document.getElementsByClassName('my-img').ondragstart = function() { return false; };
+document.getElementsByClassName('my-img').ondragstart = function () { return false; };
 
 
 //checks current language used and change lang dropdown accordingly
-if(window.lang.currentLang == 'en'){
+if (window.lang.currentLang == 'en') {
     window.lang.change('en') //will cause langauage bug if no safeguard/doublecheck
-  document.getElementById('active-lang').innerText = 'EN'// throws null pointer error here, safe to ignore so far.
-}else if(window.lang.currentLang == 'cn'){
-  window.lang.change('cn') //will cause bug if no safeguard/doublecheck
-  document.getElementById('active-lang').innerText = '简体中文'// throws null pointer error here, safe to ignore so far.
+    document.getElementById('active-lang').innerText = 'EN'// throws null pointer error here, safe to ignore so far.
+} else if (window.lang.currentLang == 'cn') {
+    window.lang.change('cn') //will cause bug if no safeguard/doublecheck
+    document.getElementById('active-lang').innerText = '简体中文'// throws null pointer error here, safe to ignore so far.
 }
 
