@@ -56,21 +56,28 @@ form.addEventListener("submit" , (event)=>{
             feedbackMessage.innerHTML = ` Something wrong happened! We are very sorry.<br> Code : ${data.error.code}`
             feedback.className = "jumbotron email-feedback bg-white failure showFb"
             feedbackContainer.className = 'email-feedback-container d-flex justify-content-center showFb' // show feedback div
+
+            //clear form input
+            form.reset()
         }else{
             feedbackStatus.textContent = 'Success!'
             feedbackMessage.innerHTML = ` Thank you! We will reach out to you as soon as possible. `
             feedback.className = "jumbotron email-feedback bg-white success showFb"
             feedbackContainer.className = 'email-feedback-container d-flex justify-content-center showFb'  // show feedback div
+
+            //clear form input
+            form.reset()
             
         }
     })
     .catch(
         (error)=>{
-
+            console.log(error)
         }
     )
 
 
+  
 
 
 } )
