@@ -130,6 +130,48 @@ footer{
         display: none;
     }
 
+    .contact-block{
+        padding: 1rem;
+    }
+
+    /*email feedback start*/
+    .email-feedback-container{
+        width: 100%;
+        position:absolute;
+        top: 70%;
+        background-color: transparent;
+        height: 30rem;
+        z-index: -1;
+    }
+
+    .email-feedback{
+        z-index: -1;
+        width: 50%;
+        height: 20rem;
+        border-radius: 2rem;
+        border: solid 2px silver;
+    }
+    
+    #email-feedback-message{
+        margin: 3%;
+    }
+
+    .success{
+        border: solid 2px rgb(126, 228, 126);
+    }
+    
+    .failure{
+        border: solid 2px rgb(228, 126, 126);
+    }
+    
+    .showFb{
+        z-index: 1;
+    }
+    
+    .hideFb{
+        z-index: -1;
+    }
+    /*email feedback end*/
 
 
   }

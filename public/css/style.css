@@ -176,6 +176,7 @@ h1{
 
 .dropdown-toggle{
     border: 1px solid  #C69F52;
+
 }
 
 .dropdown-toggle:hover{
@@ -285,7 +286,7 @@ h1{
 }
 
 /*screen constraints start*/
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1024px) {
     .iframe-content {
         height: 20rem;
     }
@@ -317,6 +318,12 @@ h1{
         animation-iteration-count: 1;
         animation-timing-function: ease-in;
         animation-duration: 0.3s;
+    }
+
+    .dropdown-toggle{
+        border: 1px solid  #C69F52;
+        margin: 0,1rem,0,1.5rem;
+        
     }
 
    
