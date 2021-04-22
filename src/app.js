@@ -14,7 +14,7 @@ require('./db/mongoose')//We dont want to grab anything, just wanted to make sur
 
 //declare which port to use, normally a port will be provided by hosting service.
 //if no hosting service provides port, use port 3000
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 //declares express public directory path and tells the app to use that path to serve up static assets such as html
 const publicDirPath = path.join(__dirname, '../public')
