@@ -10,3 +10,10 @@ mongoose.connect(dbName, {
     useNewUrlParser : true,
     useCreateIndex : true,
 })
+.then((data)=>{
+    console.log("Connection to mongodb successful")
+})
+.catch((e)=>{
+    console.log(e)
+})
+
