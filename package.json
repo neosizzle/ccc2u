@@ -4,7 +4,7 @@
   "description": "\"# ccc2u\"",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "echo \"No test specified\"",
     "dev": "nodemon src/app.js",
     "start": "node src/app.js"
   },
