@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.deploySubpath": ".",
+    "appService.defaultWebAppToDeploy": "/subscriptions/ec9c2c02-a5d3-48ee-986b-6bedae650324/resourceGroups/ccc2u/providers/Microsoft.Web/sites/ccc2u"
+}
