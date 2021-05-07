@@ -82,7 +82,10 @@
 
 .modal-event-image{
   height: 60vh;
+  object-fit: cover;
+  background-color: black;
 }
+
 
 .coming-doon-details{
   background-color: rgb(0,0,0); /* Fallback color */
