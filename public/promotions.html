@@ -1,66 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CCC2U</title>
-        <link rel="icon" href = "./images/assets/icons/logo-icon.png" type="image/gif" sizes="16x16">
 
-        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--jquery import-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCC2U</title>
+  <link rel="icon" href="./images/assets/icons/logo-icon.png" type="image/gif" sizes="16x16">
 
-        <!--tranlation helper js-->
-        <script src="./js/jquery-lang.js" charset="utf-8" type="text/javascript"></script>
-        <script src = "./js/lang-initiater.js" type="text/javascript"></script>
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--jquery import-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" href="./css/promotion.css">
+  <!--tranlation helper js-->
+  <script src="./js/jquery-lang.js" charset="utf-8" type="text/javascript"></script>
+  <script src="./js/lang-initiater.js" type="text/javascript"></script>
 
-         
-    </head>
-    <body>
-             <!--navbar start-->
-             <nav class="navbar navbar-expand-lg navbar-light bg-light show" id = "scroll-nav">
-              <div class="container-fluid">
-                  <a class="navbar-brand" href="./index.html">
-                      <img src="images/products/logo.png" alt="CCC logo">
-                    </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                  <ul class="nav nav-fill">
-                    <li class="nav-item">
-                      <a class="nav-link" lang="en" data-lang-token ="home" href="./index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" lang = "en" data-lang-token="about-us" href="./about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" lang = "en" data-lang-token="products-services" href="./products.html">Products & Services</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" lang = "en" data-lang-token="promotions" href="./promotions.html">Promotions</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" lang = "en" data-lang-token="contact" href="./contact.html">Contact us</a>
-                    </li>
-                  </ul>
-                </div>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/promotion.css">
 
-                <div class = "lang-container m-2">
-                  <div class="dropdown"> 
-                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span id = "active-lang">EN</span>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a onclick="
+
+</head>
+
+<body>
+  <!--navbar start-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light show" id="scroll-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <img src="images/products/logo.png" alt="CCC logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="nav nav-fill">
+          <li class="nav-item">
+            <a class="nav-link" lang="en" data-lang-token="home" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" lang="en" data-lang-token="about-us" href="./about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" lang="en" data-lang-token="products-services" href="./products.html">Products &
+              Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" lang="en" data-lang-token="promotions" href="./promotions.html">Promotions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" lang="en" data-lang-token="contact" href="./contact.html">Contact us</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lang-container m-2">
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <span id="active-lang">EN</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a onclick="
                         window.lang.change('en');
                         document.getElementById('active-lang').innerText = 'EN'
                         document.cookie = 'lang=en';//set lang cookie
@@ -68,102 +79,104 @@
         
                         return false;
                         " class="dropdown-item" href="#">EN</a>
-        
-                      <a onclick="
+
+            <a onclick="
                       
                       window.lang.change('cn');
                       document.getElementById('active-lang').innerText = '简体中文'
                       document.cookie = 'lang=cn';//set lang cookie
         
                         return false;" class="dropdown-item" href="#">简体中文</a>
-                    </div>
-                  </div>
-                </div>
-                <span class="navbar-text">
-                  +603-2142 2577
-                </span>
-
-              </div>
-
-            </nav>
-               <!--navbar end-->
-
-               
-
-            <section class="promotion" id="milestone" >
-              <div class="promotion-container">
-                <img src = "https://image.freepik.com/free-photo/group-people-working-out-business-plan-office_1303-15773.jpg" class = "bg-image">
-                <div class="promotion-details">
-                  <h1 lang="en" data-lang-token="coming-soon">Coming Soon</h1>
-                  <p lang="en" data-lang-token="coming-soon-desc">
-                      We're working hard to finish the development of this page. In the meantime, continue surfing our website.
-                  </p>
-              </div>
- 
-              </div>
- 
-          </section>
-
-    <!-- start footer -->
-    <footer class="bg-white text-center text-lg-start">
-      <!-- Grid container -->
-      <div class="container p-4 footer-container">
-        <!--Grid row-->
-        <div class="row">
-          <!--Grid column-->
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 p-5">
-            <h5 class="text-uppercase" lang="en" data-lang-token="contact">Contact us</h5>
-    
-            <p class = "footer-content">
-              <span lang="en" data-lang-token="address">Address</span>: D-01-04 Southgate Commercial Centre No. 2, Jalan Dua, Off, Jalan Chan Sow Lin, Chan Sow Lin, 55200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia<br><br>
-              <span lang="en" data-lang-token="tel">Tel</span>: +603-2142 2577<br><br>
-              <span lang="en" data-lang-token="email">Email</span>: enquiry@ccc2u.com
-  
-            </p>
           </div>
-          <!--Grid column-->
-    
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0 p-5">
-            <h5 class="text-uppercase mb-0" lang="en" data-lang-token="portals">Portals</h5>
-    
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!" class="text-dark" lang="en" data-lang-token="member-portal">Member portal</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark" lang="en" data-lang-token="agent-portal">Agent portal</a>
-              </li>
-  
-            </ul>
-          </div>
-          <!--Grid column-->
-          
         </div>
-        <!--Grid row-->
       </div>
-      <!-- Grid container -->
-    
-      <!-- start Copyright -->
-      <div class="text-center p-3" style="background-color: #C69F52;">
-        © 2020 Copyright:
-        <a class="text-dark">City Centre Columbarium</a>
-      </div>
-      <!-- end Copyright -->
-              </footer>
-      <!-- end Footer -->
+      <span class="navbar-text">
+        +603-2142 2577
+      </span>
 
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>    
-          <script src="./js/script.js" defer></script>
-          <!-- <script src="./js/scroll.js" defer></script> -->
-          <script type = "text/javascript">
-          //lang change listener
-          $('body').on('lang-change', (e)=> {
-            window.lang.change(window.frameElement.getAttribute('customLang'))
-    
-            });
-        
-        </script>
-          </body>
+    </div>
+
+  </nav>
+  <!--navbar end-->
+
+
+
+  <section class="promotion" id="milestone">
+    <div class="promotion-container">
+      <img src="https://image.freepik.com/free-photo/group-people-working-out-business-plan-office_1303-15773.jpg"
+        class="bg-image">
+      <div class="promotion-details">
+        <h1 lang="en" data-lang-token="coming-soon">Coming Soon</h1>
+        <p lang="en" data-lang-token="coming-soon-desc">
+          We're working hard to finish the development of this page. In the meantime, continue surfing our website.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- start footer -->
+  <footer class="bg-white text-center text-lg-start">
+    <!-- Grid container -->
+    <div class="container p-4 footer-container">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0 p-5">
+          <h5 class="text-uppercase" lang="en" data-lang-token="contact">Contact us</h5>
+
+          <p class="footer-content">
+            <span lang="en" data-lang-token="address">Address</span>: D-01-04 Southgate Commercial Centre, No. 2, Jalan
+            Dua off Jalan Chan Sow Lin, 55200 Kuala Lumpur, Malaysia<br><br>
+            <span lang="en" data-lang-token="tel">Tel</span>: +603-2142 2577<br><br>
+            <span lang="en" data-lang-token="email">Email</span>: enquiry@ccc2u.com
+
+          </p>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0 p-5">
+          <h5 class="text-uppercase mb-0" lang="en" data-lang-token="portals">Portals</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" class="text-dark" lang="en" data-lang-token="member-portal">Member portal</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark" lang="en" data-lang-token="agent-portal">Agent portal</a>
+            </li>
+
+          </ul>
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- start Copyright -->
+    <div class="text-center p-3" style="background-color: #C69F52;">
+      © 2020 Copyright:
+      <a class="text-dark">City Centre Columbarium</a>
+    </div>
+    <!-- end Copyright -->
+  </footer>
+  <!-- end Footer -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/script.js" defer></script>
+  <!-- <script src="./js/scroll.js" defer></script> -->
+  <script type="text/javascript">
+    //lang change listener
+    $('body').on('lang-change', (e) => {
+      window.lang.change(window.frameElement.getAttribute('customLang'))
+
+    });
+
+  </script>
+</body>
+
 </html>
-          
