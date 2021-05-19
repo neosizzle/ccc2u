@@ -2,9 +2,10 @@
 //import required libraries and instansiate express app
 const express = require('express')
 const path = require('path')
-require('dotenv').config({path: __dirname + '/.env'})
+require('dotenv').config()
 const app = express()
 const email = require('./utils/email.js')
+const fs = require('fs')
 
 
 app.use(express.json());
@@ -76,6 +77,7 @@ app.get('*', function(req, res){
   });
 
 //start the web server and listen on port
+
 app.listen(port , ()=>{
     console.log("Server up and running at port " + port)
     console.log("If you are developing on localhost, type localhost:" + 3000 + " in your browser to access the app")
