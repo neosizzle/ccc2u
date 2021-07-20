@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap");
+
+$font-stack: "Roboto", sans-serif;
+$primary-color: rgb(214, 212, 107);
+$secondary-color: #c69f52;
+
+body {
+  font: 100% $font-stack;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
