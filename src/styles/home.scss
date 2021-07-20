@@ -9,14 +9,16 @@
 .init-nav-container {
   min-height: 40vh;
   width: 100%;
-  background-color: aliceblue;
+  background: rgba(241, 247, 252, 0.6);
   position: absolute;
   z-index: 1;
-  opacity: 0.6;
 }
 
 .navbar-brand {
   width: 30%;
+  img {
+    background: rgba(255, 255, 255, 1);
+  }
 }
 
 .init-nav-list {
@@ -27,6 +29,7 @@
 .nav-link {
   font-size: 2rem;
   text-decoration: none;
+  color: black;
   padding: 20px 0px;
   margin: 0px 20px;
   display: inline-block;
@@ -36,6 +39,7 @@
 
 .nav-link:hover {
   opacity: 1;
+  color: black;
 }
 
 .nav-link::before {
