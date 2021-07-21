@@ -1,0 +1,55 @@
+@use 'app';
+
+.nav-container {
+  display: flex;
+  justify-content: left;
+}
+
+.nav-brand {
+  width: 10rem;
+  img {
+    width: 100%;
+    background-color: transparent;
+  }
+}
+
+.nav-link {
+  font-size: medium;
+  color: blue;
+  padding: 1rem;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: app.$primary-color;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 80%;
+}
+
+.dropdown-toggle {
+  margin-left: 1rem;
+  background-color: transparent;
+  color: black;
+}
+
+.dropdown-toggle:active {
+  @extend .dropdown-toggle;
+}
+
+.dropdown-toggle:focus {
+  @extend .dropdown-toggle;
+}
+
+.phone-num {
+  margin: 0.5rem;
+}
