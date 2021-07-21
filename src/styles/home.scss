@@ -26,37 +26,36 @@
   justify-content: space-around;
 }
 
-.nav-link {
-  font-size: 2rem;
+.init-nav-link-custom {
+  font-size: 1.5rem;
   text-decoration: none;
   color: black;
-  padding: 20px 0px;
-  margin: 0px 20px;
+  margin: 1rem;
   display: inline-block;
   position: relative;
   opacity: 0.75;
 }
 
-.nav-link:hover {
-  opacity: 1;
+.init-nav-link-custom:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  /* position: absolute; */
+  background: rgb(214, 212, 107);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.init-nav-link-custom:hover {
   color: black;
 }
 
-.nav-link::before {
-  transition: 300ms;
-  height: 3px;
-  content: "";
-  position: absolute;
-  background-color: app.$primary-color;
-}
-
-.nav-link-ltr::before {
-  width: 0%;
-  bottom: 10px;
-}
-
-.nav-link-ltr:hover::before {
+.init-nav-link-custom:hover:after {
   width: 100%;
+  left: 0;
 }
 
 .intro-1-container {
@@ -89,7 +88,7 @@
     text-decoration-color: app.$primary-color;
   }
   p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 300;
   }
   position: relative;
@@ -128,7 +127,27 @@
   padding: 1rem 4rem 1rem 4rem;
   height: 100vh;
 }
+
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
 @media only screen and (max-width: 768px) {
+  body {
+    padding-top: 5rem;
+  }
+
   .intro-1-writeup {
     h1 {
       text-decoration: underline;

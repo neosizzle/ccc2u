@@ -3,33 +3,90 @@ import logo from '../../assets/logo.png';
 import '../../styles/home.scss'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
+//hooks
+import { useState, useLayoutEffect, useEffect } from 'react';
+
 //import components
 import {Link} from "react-router-dom";
 import { Carousel } from 'react-responsive-carousel';
 import Iframe from 'react-iframe'
-import Navibar from '../Navibar'
+import Navibar from '../../components/Navibar'
+import Footer from '../../components/Footer'
 
+//function that updates the size state on windows resize 
+const useWindowSize = ()=>{
+    const [size, setSize] = useState([0, 0]);
+    useLayoutEffect(() => {
+      function updateSize() {
+        setSize([window.innerWidth, window.innerHeight]);
+      }
+      window.addEventListener('resize', updateSize);
+      updateSize();
+      return () => window.removeEventListener('resize', updateSize);
+    }, []);
+    return size;
+  }
 
 const Home = () => {
+
+    //declare states
+    //width and height stands for the width n height of screen
+    //shownav is a state where it yields wether or not the navbar should show or not
+    const [width, height] = useWindowSize();
+    const [showNav, setShowNav] = useState(width <= 768? 1: 0)
+
+    //useeffect hook to set the shownav to the appropriate value depends on viewport sidth
+    useEffect(() => {
+        setShowNav(width <= 768? 1: 0)
+    }, [width])
+  
+    //function that sets shownav to 1 if scrollewd down and 0 otherwise
+    //DOES NOT APPLY FOR MOBILE DEVICES
+    const scrollNavbar = ()=>{
+        if (window.innerWidth > 768)
+        {
+            if (window.scrollY > 150)
+            {
+                setShowNav(1)
+            }
+            else
+            {
+                setShowNav(0)
+            }
+        }
+    }
+
+    //use effect hook to handle scroll activity
+    useEffect(() => {
+        window.addEventListener('scroll',scrollNavbar)
+        return () => {
+            window.removeEventListener('scroll', scrollNavbar)
+        }
+    }, [])
+
     return ( 
         <div>
             {/* Start main header */}
-            {/* <div className = "init-nav-container">
+            {
+                //conditional rendering (renders the div if condition fufills)
+                width > 768? <div className = "init-nav-container">
                 <div className = "brand-container">
                     <img src = {logo} className = "navbar-brand" alt = "logo"></img>
                 </div>
                 <div className = "init-nav-list">
-                    <Link to = "/" className="nav-link nav-link-ltr">Home</Link>
-                    <Link to = "/" className="nav-link nav-link-ltr">Home</Link>
-                    <Link to = "/" className="nav-link nav-link-ltr">Home</Link>
-                    <Link to = "/" className="nav-link nav-link-ltr">Home</Link>
+                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">Home</Link>
+                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">Home</Link>
+                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">Home</Link>
+                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">Home</Link>
     
                 </div>
-            </div> */}
+            </div> : null
+            }
             {/* End main header */}
 
             {/* Start navbar */}
-            <Navibar/>
+            {/* conditional rendering (renders the Navibar if condition fufills) */}
+            {showNav === 1? <Navibar></Navibar>: null}
             {/* End Navbar */}
 
             {/* Start Carousel */}
@@ -52,7 +109,7 @@ const Home = () => {
                 </div>
             </Carousel>
             {/* End Carousel */}
-
+            
             {/* Start CCC intro 1 */}
             <div className = "intro-1-container">
                 <div className = "intro-1-writeup">
@@ -91,6 +148,10 @@ const Home = () => {
                 />
             </div>
             {/* End video */}
+
+            {/* Start Footer */}
+            <Footer/>
+            {/* End Footer */}
 
         </div>
      );

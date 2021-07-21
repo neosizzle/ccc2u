@@ -10,17 +10,17 @@ import {Link} from "react-router-dom";
 
 const Navibar = () => {
     return (  
-    <Navbar fixed = "top" collapseOnSelect expand="md" bg="light" variant="light" >
+    <Navbar className = "navibar" fixed = "top" collapseOnSelect expand="md" bg="light" variant="light" >
         <Container className = "nav-container">
         <Navbar.Brand className = "nav-brand" href="\"><img src = {logo}></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="expand-btn"></Navbar.Toggle>
         <Navbar.Collapse id="expand-btn">
             <Nav className="me-auto">
-                <Nav.Link className = "nav-link nav-link-ltr"  href = "/">Home</Nav.Link>
-                <Nav.Link className = "nav-link nav-link-ltr" >Features</Nav.Link>
-                <Nav.Link className = "nav-link nav-link-ltr"  href = "/">Home</Nav.Link>
-                <Nav.Link className = "nav-link nav-link-ltr" >Features</Nav.Link>
-                <Nav.Link className = "nav-link nav-link-ltr" >Pricing</Nav.Link>
+                <Nav.Link className = "navi-link"  href = "/">Home</Nav.Link>
+                <Nav.Link className = "navi-link" >Features</Nav.Link>
+                <Nav.Link className = "navi-link"  href = "/">Home</Nav.Link>
+                <Nav.Link className = "navi-link" >Features</Nav.Link>
+                <Nav.Link className = "navi-link" >Pricing</Nav.Link>
             </Nav>
         </Navbar.Collapse>
         <Nav.Item>

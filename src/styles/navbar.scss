@@ -1,8 +1,16 @@
 @use 'app';
 
-.nav-container {
-  display: flex;
-  justify-content: left;
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.navibar {
+  animation: 0.1s ease-out 0s 1 slideDown;
 }
 
 .nav-brand {
@@ -13,27 +21,36 @@
   }
 }
 
-.nav-link {
-  font-size: medium;
-  color: blue;
-  padding: 1rem;
+.navi-link {
+  font-size: 1rem;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
 }
 
-.nav-link::before {
-  transition: 300ms;
-  height: 2px;
+.navi-link:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
   content: "";
-  position: absolute;
-  background-color: app.$primary-color;
+  display: block;
+  height: 2px;
+  margin-top: 0.25rem;
+  left: 50%;
+  /* position: absolute; */
+  background: rgb(214, 212, 107);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
 }
 
-.nav-link-ltr::before {
-  width: 0%;
-  bottom: 10px;
+.navi-link:hover {
+  color: black;
 }
 
-.nav-link-ltr:hover::before {
-  width: 80%;
+.navi-link:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 .dropdown-toggle {
