@@ -20,16 +20,18 @@ import LocalizedStrings from 'react-localization';
 const cookies = new Cookies();
 let strings = new LocalizedStrings({
     EN:{
-      how:"How do you want your egg today?",
-      boiledEgg:"Boiled egg",
-      softBoiledEgg:"Soft-boiled egg",
-      choice:"How to choose the egg"
+        home:"Home",
+        about:"About us",
+        prod_serv:"Products and services",
+        promos:"Promotions",
+        contact:"Contact Us"
     },
     CN: {
-      how:"Come vuoi il tuo uovo oggi?",
-      boiledEgg:"Uovo sodo",
-      softBoiledEgg:"Uovo alla coque",
-      choice:"Come scegliere l'uovo"
+        home:"首页",
+        about:"关于我们",
+        prod_serv:"产品与服务",
+        promos:"促销",
+        contact:"联络我们"
     }
    });
 
@@ -37,52 +39,47 @@ const Navibar = ({currLang, setCurrLang}) => {
 
     strings.setLanguage(currLang);
 
-    const handleLangChange = ()=>
+    //functions to change the current language to chinese or english seperately
+    const changeToEN = () =>
     {
-        if(currLang === "EN")
-        {
-            setCurrLang('CN');
-            cookies.set('lang', 'CN', { path: '/' });
-            strings.setLanguage(currLang);
-        }
-        else
-        {
-            setCurrLang('EN');
-            cookies.set('lang', 'EN', { path: '/' });
-            strings.setLanguage(currLang);
-        }
+        setCurrLang('EN');
+        cookies.set('lang', 'EN', { path: '/' });
+        strings.setLanguage(currLang);
+    }
+    const changeToCN = () =>
+    {
+        setCurrLang('CN');
+        cookies.set('lang', 'CN', { path: '/' });
+        strings.setLanguage(currLang);
     }
     return (  
-    <Navbar className = "navibar" fixed = "top" collapseOnSelect expand="md" bg="light" variant="light" >
+    <Navbar className = "navibar" fixed = "top" collapseOnSelect expand="lg" bg="light" variant="light" >
         <Container className = "nav-container">
         <Navbar.Brand className = "nav-brand" href="\"><img src = {logo}></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="expand-btn"></Navbar.Toggle>
         <Navbar.Collapse id="expand-btn">
-            <Nav className="me-auto">
-                <Nav.Link className = "navi-link"  href = "/">Home</Nav.Link>
-                <Nav.Link className = "navi-link" >Features</Nav.Link>
-                <Nav.Link className = "navi-link"  href = "/">Home</Nav.Link>
-                <Nav.Link className = "navi-link" >Features</Nav.Link>
-                <Nav.Link className = "navi-link" >Pricing</Nav.Link>
+            <Nav className="me-auto navi-list">
+                <Nav.Link className = "navi-link"  href = "/">{strings.home}</Nav.Link>
+                <Nav.Link className = "navi-link" >{strings.about}</Nav.Link>
+                <Nav.Link className = "navi-link"  href = "/">{strings.prod_serv}</Nav.Link>
+                <Nav.Link className = "navi-link" >{strings.promos}</Nav.Link>
+                <Nav.Link className = "navi-link" >{strings.contact}</Nav.Link>
             </Nav>
         </Navbar.Collapse>
         <Nav.Item>
             <Dropdown>
                 <Dropdown.Toggle className = "dropdown-toggle"  id="dropdown-basic">
-                    EN
+                    {currLang === "EN" ? "EN" : "简体中文"}
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">EN</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">CN</Dropdown.Item>
+                    <Dropdown.Item onClick = {changeToEN}>EN</Dropdown.Item>
+                    <Dropdown.Item onClick = {changeToCN}>简体中文</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
         </Nav.Item>
         <Nav.Item className = "phone-num">
-            Phone number. Currlang = {currLang}
-        </Nav.Item>
-        <Nav.Item className = "phone-num">
-            <button onClick = {handleLangChange}>Clcik me</button>
+             +603-2142 2577
         </Nav.Item>
         </Container>
     </Navbar> 
