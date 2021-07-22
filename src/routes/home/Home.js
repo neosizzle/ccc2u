@@ -103,7 +103,7 @@ const Home = () => {
                     <img src = {logo} className = "navbar-brand" alt = "logo"></img>
                 </div>
                 <div className = "init-nav-list">
-                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">{strings.about}</Link>
+                    <Link to = "/about" className="init-nav-link-custom nav-link-ltr">{strings.about}</Link>
                     <Link to = "/" className="init-nav-link-custom nav-link-ltr">{strings.prod_serv}</Link>
                     <Link to = "/" className="init-nav-link-custom nav-link-ltr">{strings.promos}</Link>
                     <Link to = "/" className="init-nav-link-custom nav-link-ltr">{strings.contact}</Link>
@@ -138,7 +138,7 @@ const Home = () => {
                 </div>
             </Carousel>
             {/* End Carousel */}
-                <h1>currLang = {currLang} output : {currLang === "EN" ? data.key : data.key_cn} cookie : {cookies.get('lang')}</h1>
+                {/* <h1>currLang = {currLang} output : {currLang === "EN" ? data.key : data.key_cn} cookie : {cookies.get('lang')}</h1> */}
             {/* Start CCC intro 1 */}
             <div className = "intro-1-container">
                 <div className = "intro-1-writeup">

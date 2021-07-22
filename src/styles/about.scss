@@ -1,0 +1,27 @@
+@use 'app';
+
+.init-nav-container-rel {
+  min-height: 40vh;
+  width: 100%;
+  background: rgba(241, 247, 252, 0.6);
+  position: relative;
+  z-index: 1;
+}
+
+.about-container {
+  padding-top: 6rem;
+}
+
+.nav-link,
+.nav-link:focus {
+  color: black;
+  a {
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about-container {
+    padding-top: 4rem;
+  }
+}

@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import Home from './routes/home/Home'
+import About from './routes/about/About'
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/about">
-            {/* <About /> */}
+            <About />
           </Route>
           <Route path="/users">
             {/* <Users /> */}

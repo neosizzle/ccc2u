@@ -4,12 +4,10 @@ import '../styles/_app.scss'
 import '../styles/navbar.scss'
 
 //components
-import { useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from "react-bootstrap/Container";
 import Dropdown from 'react-bootstrap/Dropdown'
-import {Link} from "react-router-dom";
 
 //cookies
 import Cookies from 'universal-cookie';
@@ -55,12 +53,12 @@ const Navibar = ({currLang, setCurrLang}) => {
     return (  
     <Navbar className = "navibar" fixed = "top" collapseOnSelect expand="lg" bg="light" variant="light" >
         <Container className = "nav-container">
-        <Navbar.Brand className = "nav-brand" href="\"><img src = {logo}></img></Navbar.Brand>
+        <Navbar.Brand className = "nav-brand" href="\"><img src = {logo} alt = {"logo-brand"}></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="expand-btn"></Navbar.Toggle>
         <Navbar.Collapse id="expand-btn">
             <Nav className="me-auto navi-list">
                 <Nav.Link className = "navi-link"  href = "/">{strings.home}</Nav.Link>
-                <Nav.Link className = "navi-link" >{strings.about}</Nav.Link>
+                <Nav.Link className = "navi-link" href = "/about">{strings.about}</Nav.Link>
                 <Nav.Link className = "navi-link"  href = "/">{strings.prod_serv}</Nav.Link>
                 <Nav.Link className = "navi-link" >{strings.promos}</Nav.Link>
                 <Nav.Link className = "navi-link" >{strings.contact}</Nav.Link>
