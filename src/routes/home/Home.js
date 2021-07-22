@@ -13,6 +13,31 @@ import Iframe from 'react-iframe'
 import Navibar from '../../components/Navibar'
 import Footer from '../../components/Footer'
 
+//cookies
+import Cookies from 'universal-cookie';
+
+//dummy data
+import data from "../../data/dummy"
+
+//localization
+import LocalizedStrings from 'react-localization';
+
+const cookies = new Cookies();
+let strings = new LocalizedStrings({
+    EN:{
+      about:"About us",
+      prod_serv:"Products and services",
+      promos:"Promotions",
+      contact:"Contact Us"
+    },
+    CN: {
+      about:"关于我们",
+      prod_serv:"产品与服务",
+      promos:"促销",
+      contact:"联络我们"
+    }
+   });
+
 //function that updates the size state on windows resize 
 const useWindowSize = ()=>{
     const [size, setSize] = useState([0, 0]);
@@ -64,6 +89,10 @@ const Home = () => {
         }
     }, [])
 
+    //state to store the current lang
+    const [currLang, setCurrLang] = useState(cookies.get('lang') ? cookies.get('lang') : strings.getLanguage())
+    strings.setLanguage(currLang)
+
     return ( 
         <div>
             {/* Start main header */}
@@ -74,10 +103,10 @@ const Home = () => {
                     <img src = {logo} className = "navbar-brand" alt = "logo"></img>
                 </div>
                 <div className = "init-nav-list">
-                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">Home</Link>
-                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">Home</Link>
-                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">Home</Link>
-                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">Home</Link>
+                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">{strings.about}</Link>
+                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">{strings.prod_serv}</Link>
+                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">{strings.promos}</Link>
+                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">{strings.contact}</Link>
     
                 </div>
             </div> : null
@@ -86,7 +115,7 @@ const Home = () => {
 
             {/* Start navbar */}
             {/* conditional rendering (renders the Navibar if condition fufills) */}
-            {showNav === 1? <Navibar></Navibar>: null}
+            {showNav === 1? <Navibar currLang = {currLang} setCurrLang = {setCurrLang}/>: null}
             {/* End Navbar */}
 
             {/* Start Carousel */}
@@ -109,7 +138,7 @@ const Home = () => {
                 </div>
             </Carousel>
             {/* End Carousel */}
-            
+                <h1>currLang = {currLang} output : {currLang === "EN" ? data.key : data.key_cn} cookie : {cookies.get('lang')}</h1>
             {/* Start CCC intro 1 */}
             <div className = "intro-1-container">
                 <div className = "intro-1-writeup">
@@ -150,7 +179,7 @@ const Home = () => {
             {/* End video */}
 
             {/* Start Footer */}
-            <Footer/>
+            <Footer currLang = {currLang}/>
             {/* End Footer */}
 
         </div>
