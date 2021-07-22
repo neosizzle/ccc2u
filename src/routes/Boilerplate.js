@@ -99,7 +99,7 @@ const About = () => {
                 //conditional rendering (renders the div if condition fufills)
                 width > 768? <div className = "init-nav-container-rel">
                 <div className = "brand-container">
-                    <img src = {logo} className = "navbar-brand" alt = "logo"></img>
+                    <Link to = "/" className = "navbar-brand-container"> <img src = {logo} className = "navbar-brand" alt = "logo"/></Link>
                 </div>
                 <div className = "init-nav-list">
                     <Link to = "/about" className="init-nav-link-custom nav-link-ltr">{strings.about}</Link>
@@ -117,8 +117,7 @@ const About = () => {
             {showNav === 1? <Navibar currLang = {currLang} setCurrLang = {setCurrLang}/>: null}
             {/* End Navbar */}
 
-
-
+         
 
             {/* Start Footer */}
             <Footer currLang = {currLang}/>

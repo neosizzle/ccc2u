@@ -8,7 +8,8 @@ import { useState, useLayoutEffect, useEffect } from 'react';
 
 //import components
 import {Link} from "react-router-dom";
-
+import Tabs from "react-bootstrap/Tabs"
+import Tab from "react-bootstrap/Tab"
 import Navibar from '../../components/Navibar'
 import Footer from '../../components/Footer'
 
@@ -92,6 +93,9 @@ const About = () => {
     const [currLang, setCurrLang] = useState(cookies.get('lang') ? cookies.get('lang') : strings.getLanguage())
     strings.setLanguage(currLang)
 
+    //state to store the current displayed content
+    const [currContent, setCurrContent] = useState("bg")
+
     return ( 
         <div>
             {/* Start main header */}
@@ -99,7 +103,7 @@ const About = () => {
                 //conditional rendering (renders the div if condition fufills)
                 width > 768? <div className = "init-nav-container-rel">
                 <div className = "brand-container">
-                    <img src = {logo} className = "navbar-brand" alt = "logo"></img>
+                    <Link to = "/" className = "navbar-brand-container"> <img src = {logo} className = "navbar-brand" alt = "logo"/></Link>
                 </div>
                 <div className = "init-nav-list">
                     <Link to = "/about" className="init-nav-link-custom nav-link-ltr">{strings.about}</Link>
@@ -117,8 +121,25 @@ const About = () => {
             {showNav === 1? <Navibar currLang = {currLang} setCurrLang = {setCurrLang}/>: null}
             {/* End Navbar */}
 
-
-
+            {/* start Tabs */}
+            <div className = "tabs-container">
+                <Tabs
+                activeKey={currContent}
+                onSelect={(k) => setCurrContent(k)}
+                className="mb-3"
+                >
+                <Tab eventKey="bg" title="bg">
+                    <h1>bg</h1>
+                </Tab>
+                <Tab eventKey="team" title="team">
+                    <h1>team</h1>
+                </Tab>
+                <Tab eventKey="milestone" title="milestone">
+                    <h1>milestone</h1>
+                </Tab>
+                </Tabs>
+            </div>
+            {/* end tabs */}
 
             {/* Start Footer */}
             <Footer currLang = {currLang}/>

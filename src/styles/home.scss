@@ -14,11 +14,33 @@
   z-index: 1;
 }
 
+.init-nav-container-rel {
+  min-height: 40vh;
+  width: 100%;
+  position: relative;
+  background-image: url("https://ccc2u.com/images/products/klcclong-min.jpg");
+  background-size: cover;
+  z-index: 1;
+}
+
+.init-nav-container-rel:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand-container {
+  display: flex;
+  justify-content: center;
+}
+
 .navbar-brand {
   width: 30%;
-  img {
-    background: rgba(255, 255, 255, 1);
-  }
 }
 
 .init-nav-list {
