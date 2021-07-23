@@ -1,0 +1,17 @@
+@use 'app';
+
+.team-container {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: solid 1.5px app.$primary-color;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+  .team-portrait {
+    width: 90%;
+  }
+}

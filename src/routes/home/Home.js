@@ -142,11 +142,9 @@ const Home = () => {
             {/* Start CCC intro 1 */}
             <div className = "intro-1-container">
                 <div className = "intro-1-writeup">
-                    <h1>Lorem Ipsum</h1>
+                    <h1>{currLang === "EN"? data.key : data.key_cn}</h1>
                     <p>
-                    orem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus arcu nunc, volutpat convallis lorem venenatis vel. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vitae ultrices dolor. Cras egestas ante vitae sodales euismod. Etiam in sapien quis augue commodo lobortis. Aliquam gravida vehicula nisi vitae dictum. Donec consequat turpis eu odio maximus aliquam. Nulla finibus hendrerit mauris, at porta leo semper non. Maecenas at orci eget lorem aliquet congue et ut augue. Duis arcu ante, scelerisque ac augue sed, interdum vehicula velit.
-                    Fusce commodo sem et odio auctor, id congue enim vehicula. Ut suscipit nisl a orci malesuada pretium. Suspendisse potenti. Praesent venenatis blandit risus, at blandit eros auctor tristique. Aenean sagittis ultricies lorem eu semper. Fusce nec eros quis libero vestibulum pulvinar id fringilla turpis. Integer laoreet tellus a rhoncus convallis. Nulla eget orci eget neque consequat accumsan. Etiam tincidunt id sapien non ultricies. Praesent tristique sollicitudin ex ut auctor. Integer consequat sed ante in posuere. Fusce at bibendum urna.
-                    Fusce commodo sem et odio auctor, id congue enim vehicula. Ut suscipit nisl a orci malesuada pretium. Suspendisse potenti. Praesent venenatis blandit risus, at blandit eros auctor tristique. Aenean sagittis ultricies lorem eu semper. Fusce nec eros quis libero vestibulum pulvinar id fringilla turpis. Integer laoreet tellus a rhoncus convallis. Nulla eget orci eget neque consequat accumsan. Etiam tincidunt id sapien non ultricies. Praesent tristique sollicitudin ex ut auctor. Integer consequat sed ante in posuere. Fusce at bibendum urna.
+                        {currLang === "EN"? data.key_content: data.key_content_cn}
                     </p>
                 </div>
             </div>
@@ -155,16 +153,16 @@ const Home = () => {
             {/* Start CCC intro 2 */}
             <div className = "intro-2-container">
                 <div className = "intro-2-writeup">
-                    <h1>Lorem Ipsum</h1>
+                <h1>{currLang === "EN"? data.key : data.key_cn}</h1>
                     <p>
-                    orem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus arcu nunc, volutpat convallis lorem venenatis vel. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vitae ultrices dolor. Cras egestas ante vitae sodales euismod. Etiam in sapien quis augue commodo lobortis. Aliquam gravida vehicula nisi vitae dictum. Donec consequat turpis eu odio maximus aliquam. Nulla finibus hendrerit mauris, at porta leo semper non. Maecenas at orci eget lorem aliquet congue et ut augue. Duis arcu ante, scelerisque ac augue sed, interdum vehicula velit.
+                        {currLang === "EN"? data.key_content: data.key_content_cn}
                     </p>
                 </div>
             </div>
             {/* End CCC intro 2 */}
 
             {/* Start Video */}
-            <div className = "video-title"><h1>Lorem Ipsum</h1></div>
+            <div className = "video-title"><h1>{currLang === "EN"? data.key : data.key_cn}</h1></div>
             <div className = "video-container">
                 <Iframe
                 url="https://www.youtube.com/embed/i5gKDdUgbLw"

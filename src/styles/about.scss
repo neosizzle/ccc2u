@@ -1,11 +1,7 @@
-@use 'app';
-
 .nav-link,
+.nav-link:hover,
 .nav-link:focus {
-  color: black;
-  a {
-    color: black;
-  }
+  color: black !important;
 }
 
 .tabs-container {

@@ -12,6 +12,9 @@ import Tabs from "react-bootstrap/Tabs"
 import Tab from "react-bootstrap/Tab"
 import Navibar from '../../components/Navibar'
 import Footer from '../../components/Footer'
+import Background from '../../components/About/Background'
+import Teams from '../../components/About/Teams'
+import Milestone from '../../components/About/Milestone'
 
 //cookies
 import Cookies from 'universal-cookie';
@@ -28,13 +31,19 @@ let strings = new LocalizedStrings({
       about:"About us",
       prod_serv:"Products and services",
       promos:"Promotions",
-      contact:"Contact Us"
+      contact:"Contact Us",
+      bg:"Background and Aspiration",
+      team:"Our Team",
+      milestone:"Milestone"
     },
     CN: {
       about:"关于我们",
       prod_serv:"产品与服务",
       promos:"促销",
-      contact:"联络我们"
+      contact:"联络我们",
+      bg:"背景与理想",
+      team:"团队",
+      milestone:"旅程碑"
     }
    });
 
@@ -126,16 +135,16 @@ const About = () => {
                 <Tabs
                 activeKey={currContent}
                 onSelect={(k) => setCurrContent(k)}
-                className="mb-3"
+                className="mb-3 tabs-custom"
                 >
-                <Tab eventKey="bg" title="bg">
-                    <h1>bg</h1>
+                <Tab eventKey="bg" title={strings.bg}>
+                    <Background currLang = {currLang}/>
                 </Tab>
-                <Tab eventKey="team" title="team">
-                    <h1>team</h1>
+                <Tab eventKey="team" title={strings.team}>
+                    <Teams currLang = {currLang}/>
                 </Tab>
-                <Tab eventKey="milestone" title="milestone">
-                    <h1>milestone</h1>
+                <Tab eventKey="milestone" title={strings.milestone}>
+                    <Milestone currLang = {currLang}/>
                 </Tab>
                 </Tabs>
             </div>

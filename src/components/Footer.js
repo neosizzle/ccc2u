@@ -34,7 +34,7 @@ let strings = new LocalizedStrings({
 const Footer = ({currLang}) => {
     strings.setLanguage(currLang)
     return (
-        <div>
+        <div className = "border-top">
             {/* Grid container */}
             <Container>
                     <Row>
