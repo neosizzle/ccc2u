@@ -8,6 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from "react-bootstrap/Container";
 import Dropdown from 'react-bootstrap/Dropdown'
+import {Link} from "react-router-dom";
 
 //cookies
 import Cookies from 'universal-cookie';
@@ -57,11 +58,11 @@ const Navibar = ({currLang, setCurrLang}) => {
         <Navbar.Toggle aria-controls="expand-btn"></Navbar.Toggle>
         <Navbar.Collapse id="expand-btn">
             <Nav className="me-auto navi-list">
-                <Nav.Link className = "navi-link"  href = "/">{strings.home}</Nav.Link>
-                <Nav.Link className = "navi-link" href = "/about">{strings.about}</Nav.Link>
-                <Nav.Link className = "navi-link"  href = "/">{strings.prod_serv}</Nav.Link>
-                <Nav.Link className = "navi-link" >{strings.promos}</Nav.Link>
-                <Nav.Link className = "navi-link" >{strings.contact}</Nav.Link>
+                <Link className = "navi-link" to = "/">{strings.home}</Link>
+                <Link className = "navi-link" to = "/about">{strings.about}</Link>
+                <Link className = "navi-link" to = "/">{strings.prod_serv}</Link>
+                <Link className = "navi-link" to = "/">{strings.promos}</Link>
+                <Link className = "navi-link" to = "/">{strings.contact}</Link>
             </Nav>
         </Navbar.Collapse>
         <Nav.Item>

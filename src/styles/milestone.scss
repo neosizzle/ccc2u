@@ -1,9 +1,3 @@
-@use 'app';
-
-.resize-sensor {
-  width: 600px;
-}
-
 @keyframes slideLeft {
   0% {
     transform: translateX(100%);
@@ -48,19 +42,23 @@
   }
 }
 
-.timeline-animate {
+.timeline-content-container {
+  min-height: 50vh;
+}
+
+.timeline-animate-l2r {
   animation: 0.5s ease-in 0s 1 slideLeft;
 }
 
-.timeline-animate-2 {
+.timeline-animate-l2r-2 {
   animation: 0.5s ease-in 0s 1 slideLeft-2;
 }
 
-.timeline-animate-rev {
+.timeline-animate-r2l {
   animation: 0.5s ease-in 0s 1 slideRight;
 }
 
-.timeline-animate-rev-2 {
+.timeline-animate-r2l-2 {
   animation: 0.5s ease-in 0s 1 slideRight-2;
 }
 

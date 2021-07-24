@@ -103,7 +103,7 @@ const About = () => {
     strings.setLanguage(currLang)
 
     //state to store the current displayed content
-    const [currContent, setCurrContent] = useState("bg")
+    const [currContent, setCurrContent] = useState("about-bg")
 
     return ( 
         <div>
@@ -137,13 +137,13 @@ const About = () => {
                 onSelect={(k) => setCurrContent(k)}
                 className="mb-3 tabs-custom"
                 >
-                <Tab eventKey="bg" title={strings.bg}>
+                <Tab eventKey="about-bg" title={strings.bg}>
                     <Background currLang = {currLang}/>
                 </Tab>
-                <Tab eventKey="team" title={strings.team}>
+                <Tab eventKey="about-team" title={strings.team}>
                     <Teams currLang = {currLang}/>
                 </Tab>
-                <Tab eventKey="milestone" title={strings.milestone}>
+                <Tab eventKey="about-milestone" title={strings.milestone}>
                     <Milestone currLang = {currLang}/>
                 </Tab>
                 </Tabs>

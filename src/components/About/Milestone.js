@@ -2,7 +2,7 @@
 import '../../styles/milestone.scss'
 
 //hooks
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 import classNames from 'classnames';
 
 
@@ -66,9 +66,9 @@ const Background = ({currLang}) => {
                     /> :<Spinner  animation="border" role="status"/> }
             </div>
       
-            <div className={classNames("text-center", (value >= prev)? 
-            (animate? "timeline-animate" : "timeline-animate-2") 
-            : (animate? "timeline-animate-rev" : "timeline-animate-rev-2"))}>
+            <div className={classNames("timeline-content-container", "text-center", (value >= prev)? 
+            (animate? "timeline-animate-l2r" : "timeline-animate-l2r-2") 
+            : (animate? "timeline-animate-r2l" : "timeline-animate-r2l-2"))}>
                 <img className = "timeline-img" src = {data[value].img} alt = "img"></img>
                 <h1>{currLang === "EN"? data[value].key: data[value].key_cn}</h1>
                 <p>
