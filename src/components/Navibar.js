@@ -61,7 +61,7 @@ const Navibar = ({currLang, setCurrLang}) => {
                 <Link className = "navi-link" to = "/">{strings.home}</Link>
                 <Link className = "navi-link" to = "/about">{strings.about}</Link>
                 <Link className = "navi-link" to = "/">{strings.prod_serv}</Link>
-                <Link className = "navi-link" to = "/">{strings.promos}</Link>
+                <Link className = "navi-link" to = "/promotions">{strings.promos}</Link>
                 <Link className = "navi-link" to = "/">{strings.contact}</Link>
             </Nav>
         </Navbar.Collapse>
