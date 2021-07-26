@@ -60,9 +60,9 @@ const Navibar = ({currLang, setCurrLang}) => {
             <Nav className="me-auto navi-list">
                 <Link className = "navi-link" to = "/">{strings.home}</Link>
                 <Link className = "navi-link" to = "/about">{strings.about}</Link>
-                <Link className = "navi-link" to = "/">{strings.prod_serv}</Link>
+                <Link className = "navi-link" to = "/products">{strings.prod_serv}</Link>
                 <Link className = "navi-link" to = "/promotions">{strings.promos}</Link>
-                <Link className = "navi-link" to = "/">{strings.contact}</Link>
+                <Link className = "navi-link" to = "/contact">{strings.contact}</Link>
             </Nav>
         </Navbar.Collapse>
         <Nav.Item>

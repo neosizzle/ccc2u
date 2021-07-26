@@ -10,6 +10,9 @@ import {
 import Home from './routes/home/Home'
 import About from './routes/about/About'
 import Promotions from './routes/promotions/Promotions'
+import Products from './routes/products/Products'
+import Contact from './routes/contact/Contact'
+
 
 function App() {
   return (
@@ -21,8 +24,14 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
+          <Route path="/products">
+            <Products />
+          </Route>
           <Route path="/promotions">
             <Promotions />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route path="/">
             <Home />

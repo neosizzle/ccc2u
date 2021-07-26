@@ -3,7 +3,7 @@ import '../../styles/promotions.scss'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 //hooks
-import { useState, useLayoutEffect, useEffect } from 'react';
+import { useState } from 'react';
 
 //import components
 import Navibar from '../../components/Navibar'

@@ -1,23 +1,25 @@
 //import assets
 import logo from '../../assets/logo.png';
-import '../../styles/home.scss'
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import '../../styles/products.scss'
 
 //hooks
 import { useState, useLayoutEffect, useEffect } from 'react';
 
 //import components
 import {Link} from "react-router-dom";
-import { Carousel } from 'react-responsive-carousel';
-import Iframe from 'react-iframe'
 import Navibar from '../../components/Navibar'
 import Footer from '../../components/Footer'
+import Product from '../../components/Products/Product'
+import Tab from 'react-bootstrap/Tab'
+import Nav from 'react-bootstrap/Nav'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 //cookies
 import Cookies from 'universal-cookie';
 
 //dummy data
-import data from "../../data/dummy"
+import data from '../../data/product-dummy'
 
 //localization
 import LocalizedStrings from 'react-localization';
@@ -28,13 +30,19 @@ let strings = new LocalizedStrings({
       about:"About us",
       prod_serv:"Products and services",
       promos:"Promotions",
-      contact:"Contact Us"
+      contact:"Contact Us",
+      bg:"Background and Aspiration",
+      team:"Our Team",
+      milestone:"Milestone"
     },
     CN: {
       about:"关于我们",
       prod_serv:"产品与服务",
       promos:"促销",
-      contact:"联络我们"
+      contact:"联络我们",
+      bg:"背景与理想",
+      team:"团队",
+      milestone:"旅程碑"
     }
    });
 
@@ -52,7 +60,7 @@ const useWindowSize = ()=>{
     return size;
   }
 
-const Home = () => {
+const Products = () => {
 
     //declare states
     //width and height stands for the width n height of screen
@@ -98,9 +106,9 @@ const Home = () => {
             {/* Start main header */}
             {
                 //conditional rendering (renders the div if condition fufills)
-                width > 768? <div className = "init-nav-container">
+                width > 768? <div className = "init-nav-container-rel">
                 <div className = "brand-container">
-                <Link to = "/" className = "navbar-brand-container"> <img src = {logo} className = "navbar-brand" alt = "logo"/></Link>
+                    <Link to = "/" className = "navbar-brand-container"> <img src = {logo} className = "navbar-brand" alt = "logo"/></Link>
                 </div>
                 <div className = "init-nav-list">
                     <Link to = "/about" className="init-nav-link-custom nav-link-ltr">{strings.about}</Link>
@@ -118,63 +126,41 @@ const Home = () => {
             {showNav === 1? <Navibar currLang = {currLang} setCurrLang = {setCurrLang}/>: null}
             {/* End Navbar */}
 
-            {/* Start Carousel */}
-            <Carousel
-            showThumbs = {false} 
-            showStatus = {false} 
-            showArrows = {false} 
-            autoFocus={true} 
-            autoPlay = {true} 
-            infiniteLoop = {true}  
-            interval = {3500}>
-                <div>
-                    <img src="https://ccc2u.com/images/products/mainlobby-min.jpg" alt = "Carousel img"/>
-                </div>
-                <div>
-                    <img src="https://ccc2u.com/images/products/airal-view-min.png" alt = "Carousel img"/>
-                </div>
-                <div>
-                    <img src="https://ccc2u.com/images/products/redbench-min.jpg" alt = "Carousel img"/>
-                </div>
-            </Carousel>
-            {/* End Carousel */}
-                {/* <h1>currLang = {currLang} output : {currLang === "EN" ? data.key : data.key_cn} cookie : {cookies.get('lang')}</h1> */}
-            {/* Start CCC intro 1 */}
-            <div className = "intro-1-container">
-                <div className = "intro-1-writeup">
-                    <h1>{currLang === "EN"? data.key : data.key_cn}</h1>
-                    <p>
-                        {currLang === "EN"? data.key_content: data.key_content_cn}
-                    </p>
-                </div>
+            {/* Start tabs */}
+            <div className = "tabs-container">
+                <Tab.Container defaultActiveKey={0}>
+                    <Row className = "pills-container">
+                        <Col sm={3} className = "bg-light p-1">
+                        <Nav variant="pills" className="flex-column">
+                            {
+                                data.map((data, idx)=>{
+                                    return (
+                                        <Nav.Item className = "pills">
+                                         <Nav.Link key = {idx} eventKey={idx}>{currLang === "EN" ? data.key: data.key_cn}</Nav.Link>
+                                        </Nav.Item>
+                                    )
+                                })
+                            }
+                        </Nav>
+                        </Col>
+                        <Col sm={9}>
+                        <Tab.Content>
+                            {
+                                data.map((data, idx)=>{
+                                    return (
+                                        <Tab.Pane key = {idx} eventKey={idx}>
+                                            <Product currLang = {currLang} data = {data}/>
+                                        </Tab.Pane>
+                                    )
+                                })
+                            }
+      
+                        </Tab.Content>
+                        </Col>
+                    </Row>
+                </Tab.Container>
             </div>
-            {/* End CCC intro 1 */}
-
-            {/* Start CCC intro 2 */}
-            <div className = "intro-2-container">
-                <div className = "intro-2-writeup">
-                <h1>{currLang === "EN"? data.key : data.key_cn}</h1>
-                    <p>
-                        {currLang === "EN"? data.key_content: data.key_content_cn}
-                    </p>
-                </div>
-            </div>
-            {/* End CCC intro 2 */}
-
-            {/* Start Video */}
-            <div className = "video-title"><h1>{currLang === "EN"? data.key : data.key_cn}</h1></div>
-            <div className = "video-container">
-                <Iframe
-                url="https://www.youtube.com/embed/i5gKDdUgbLw"
-                width="100%"
-                height="100%"
-                id="myId"
-                className="myClassname"
-                display="initial"
-                position="relative"
-                />
-            </div>
-            {/* End video */}
+            {/* End Tabs */}
 
             {/* Start Footer */}
             <Footer currLang = {currLang}/>
@@ -184,4 +170,4 @@ const Home = () => {
      );
 }
  
-export default Home;
+export default Products;

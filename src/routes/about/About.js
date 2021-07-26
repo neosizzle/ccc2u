@@ -116,9 +116,9 @@ const About = () => {
                 </div>
                 <div className = "init-nav-list">
                     <Link to = "/about" className="init-nav-link-custom nav-link-ltr">{strings.about}</Link>
-                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">{strings.prod_serv}</Link>
-                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">{strings.promos}</Link>
-                    <Link to = "/" className="init-nav-link-custom nav-link-ltr">{strings.contact}</Link>
+                    <Link to = "/products" className="init-nav-link-custom nav-link-ltr">{strings.prod_serv}</Link>
+                    <Link to = "/promotions" className="init-nav-link-custom nav-link-ltr">{strings.promos}</Link>
+                    <Link to = "/contact" className="init-nav-link-custom nav-link-ltr">{strings.contact}</Link>
     
                 </div>
             </div> : null

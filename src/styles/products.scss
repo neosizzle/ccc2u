@@ -1,0 +1,35 @@
+@use 'app';
+
+.tabs-container {
+  margin: 1rem;
+}
+
+.pills-container {
+  --bs-gutter-x: 0;
+}
+
+.pills {
+  border: 1px solid app.$secondary-color;
+  border-radius: 0.5rem;
+}
+
+.pills:hover {
+  background-color: #cab07a;
+}
+.pills:active {
+  background-color: #d1ad66;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  //   border: 1px app.$primary-color solid;
+  //   background-color: white;
+  background-color: app.$secondary-color !important;
+  color: white;
+}
+
+@media only screen and (max-width: 426px) {
+  .tabs-container {
+    padding-top: 3rem;
+  }
+}

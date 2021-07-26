@@ -3,19 +3,28 @@ $theme-colors: (
   "primary": rgb(214, 212, 107),
   "secondary": #c69f52,
 );
-
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap");
 
 $font-stack: "Roboto", sans-serif;
-$primary-color: rgb(214, 212, 107);
+$primary-color: #d6d46b;
 $secondary-color: #c69f52;
 
 body {
   font: 100% $font-stack;
   margin: 0;
   scroll-behavior: smooth;
+}
+
+.nav-link,
+.nav-link:hover,
+.nav-link:focus {
+  color: black;
+}
+
+.row {
+  --bs-gutter-x: 0;
 }
 
 a {
