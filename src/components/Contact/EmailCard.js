@@ -5,7 +5,6 @@ import '../../styles/card.scss'
 import { useState } from 'react'
 
 //utils
-//import{ init } from 'emailjs-com';
 import axios from 'axios';
 
 ///components
