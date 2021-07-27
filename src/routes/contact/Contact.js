@@ -1,5 +1,7 @@
 //import assets
 import logo from '../../assets/logo.png';
+import gmaps from '../../assets/icons/google-maps.png'
+import waze from '../../assets/icons/waze.png'
 import '../../styles/contact.scss'
 
 //hooks
@@ -32,7 +34,8 @@ let strings = new LocalizedStrings({
       contact:"Contact Us",
       bg:"Background and Aspiration",
       team:"Our Team",
-      milestone:"Milestone"
+      milestone:"Milestone",
+      findus : "Find us!",
     },
     CN: {
       about:"关于我们",
@@ -41,7 +44,8 @@ let strings = new LocalizedStrings({
       contact:"联络我们",
       bg:"背景与理想",
       team:"团队",
-      milestone:"旅程碑"
+      milestone:"旅程碑",
+      findus : "我们的地点",
     }
    });
 
@@ -133,6 +137,32 @@ const Products = () => {
                 </Row>
             </div>
             {/* End Contact and Email */}
+
+            {/* Start google maps */}
+            <div>
+                <div className = "map-container d-flex flex-column justify-content-center align-tems-center">
+                    <h2 className = "find-us">
+                        {strings.findus}
+                    </h2>
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.8863508882887!2d101.7086439641122!3d3.124743304175185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc361c4e354c67%3A0xdf9d07805ca3f5e2!2sSouthgate%20Commercial%20Center!5e0!3m2!1sen!2smy!4v1627365394813!5m2!1sen!2smy"
+                    frameBorder="0"
+                    style={{ border: 0, height : "70vh", width : "100%" }}
+                    allowFullScreen=""
+                    aria-hidden="false"
+                    tabIndex="0"
+                    />
+                </div>
+                <div className = "links-container d-flex justify-content-center align-tems-center">
+                    <a target="_blank" href = "https://www.google.com.my/maps/place/CCC+Sales+Gallery/@3.1247433,101.708644,17z/data=!4m8!1m2!2m1!1sCCC+Sales+Gallery,+D-01-04+Southgate+Commercial+Centre,+No.+2,+Jalan+Dua,+Off+Jalan+Chan+Sow+Lin,+Chan+Sow+Lin,+55200+Kuala+Lumpur,+Wilayah+Persekutuan+Kuala+Lumpur,+Malaysia!3m4!1s0x31cc37128b68b151:0x2cfd4a1d1155cec!8m2!3d3.124959!4d101.7109859">
+                        <img src = {gmaps} alt = "gmaps"></img>
+                    </a>
+                    <a target="_blank" href = "https://www.waze.com/live-map/directions/malaysia/wilayah-persekutuan-kuala-lumpur/kuala-lumpur/ccc-sales-gallery?utm_source=waze_website&utm_campaign=waze_website&utm_medium=website_menu&to=place.ChIJUbFoixI3zDER7FwV0aHUzwI">
+                        <img src = {waze} alt = "waze"></img>
+                    </a>
+                </div>
+            </div>
+            {/* End google maps */}
 
             {/* Start navbar */}
             {/* conditional rendering (renders the Navibar if condition fufills) */}

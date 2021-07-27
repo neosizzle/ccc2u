@@ -1,3 +1,18 @@
+.map-container {
+  padding: 1rem 3rem 1rem 3rem;
+  min-height: 70vh;
+}
+
+.find-us {
+  text-decoration: underline;
+  text-decoration-color: #d6d46b;
+}
+
+.links-container {
+  a {
+    margin: 2rem;
+  }
+}
 @media only screen and (max-width: 768px) {
   .contact-container {
     padding-top: 2rem;

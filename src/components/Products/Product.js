@@ -5,7 +5,7 @@ const Product = ({currLang, data}) => {
         <div>
             <div className = "product-container">
                 <div className = "d-flex justify-content-center">
-                    <img className = "product-img" src = {data.img} alt = "image"/>
+                    <img className = "product-img" src = {data.img} alt = "product-img"/>
                 </div>
                 <div className = "product-content-container">
                     <div className = "product-title">
