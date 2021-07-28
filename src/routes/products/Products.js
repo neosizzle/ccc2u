@@ -2,6 +2,9 @@
 import logo from '../../assets/logo.png';
 import '../../styles/products.scss'
 
+//utils
+import axios from 'axios';
+
 //hooks
 import { useState, useLayoutEffect, useEffect } from 'react';
 
@@ -14,12 +17,13 @@ import Tab from 'react-bootstrap/Tab'
 import Nav from 'react-bootstrap/Nav'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Spinner from 'react-bootstrap/Spinner'
 
 //cookies
 import Cookies from 'universal-cookie';
 
 //dummy data
-import data from '../../data/product-dummy'
+//import data from '../../data/product-dummy'
 
 //localization
 import LocalizedStrings from 'react-localization';
@@ -101,6 +105,20 @@ const Products = () => {
     const [currLang, setCurrLang] = useState(cookies.get('lang') ? cookies.get('lang') : strings.getLanguage())
     strings.setLanguage(currLang)
 
+    //use effect hook to get data from cms
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_ADMIN_URL}/products`)
+        .then((res)=>{
+            setData(res.data);
+            //console.log(`${process.env.REACT_APP_ADMIN_URL}${data[0].cover_img.formats.large.url}`)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }, [])
+
     return ( 
         <div>
             {/* Start main header */}
@@ -133,26 +151,30 @@ const Products = () => {
                         <Col sm={3} className = "bg-light p-1">
                         <Nav variant="pills" className="flex-column">
                             {
+                                data[0] ?
                                 data.map((data, idx)=>{
                                     return (
-                                        <Nav.Item className = "pills">
-                                         <Nav.Link key = {idx} eventKey={idx}>{currLang === "EN" ? data.key: data.key_cn}</Nav.Link>
+                                        <Nav.Item key = {idx} className = "pills">
+                                         <Nav.Link eventKey={idx}>{currLang === "EN" ? data.title: data.title_cn}</Nav.Link>
                                         </Nav.Item>
                                     )
-                                })
+                                }) :
+                                <Spinner animation="border" role="status"/>
                             }
                         </Nav>
                         </Col>
                         <Col sm={9}>
                         <Tab.Content>
                             {
+                                data[0] ?
                                 data.map((data, idx)=>{
                                     return (
                                         <Tab.Pane key = {idx} eventKey={idx}>
                                             <Product currLang = {currLang} data = {data}/>
                                         </Tab.Pane>
                                     )
-                                })
+                                }) :
+                                <Spinner animation="border" role="status"/>
                             }
       
                         </Tab.Content>

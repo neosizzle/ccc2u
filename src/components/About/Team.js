@@ -1,5 +1,4 @@
 
-
 //import components
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -20,12 +19,12 @@ const Team = ({currLang, data}) => {
         <div className = "team-container">
                 <Row>
                     <Col lg = {6} md = {12}>
-                        <img className = "team-portrait" src = "https://ccc2u.com/images/team/exec-min.png" alt = "exec"></img>
+                        <img className = "team-portrait" src = {`${process.env.REACT_APP_ADMIN_URL}${data.portrait.formats.large.url}`} alt = "exec"></img>
                     </Col>
 
                     <Col lg = {6} md = {12}>
-                        <h1>{currLang === "EN"? data.key : data.key_cn}</h1>
-                        <p><span className = "bold">{currLang === "EN"? data.key : data.key_cn}</span> {currLang === "EN"? data.key_content : data.key_content_cn}</p>
+                        <h1>{currLang === "EN"? data.position : data.position_cn}</h1>
+                        <p><span className = "bold">{currLang === "EN"? data.name : data.name_cn}</span> {currLang === "EN"? data.description : data.description_cn}</p>
                     </Col>
                 </Row>
             </div>

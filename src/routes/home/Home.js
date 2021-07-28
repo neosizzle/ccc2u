@@ -6,18 +6,22 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 //hooks
 import { useState, useLayoutEffect, useEffect } from 'react';
 
+//utils
+import axios from 'axios';
+
 //import components
 import {Link} from "react-router-dom";
 import { Carousel } from 'react-responsive-carousel';
 import Iframe from 'react-iframe'
 import Navibar from '../../components/Navibar'
 import Footer from '../../components/Footer'
+import Spinner from 'react-bootstrap/Spinner'
 
 //cookies
 import Cookies from 'universal-cookie';
 
 //dummy data
-import data from "../../data/dummy"
+//import data from "../../data/dummy"
 
 //localization
 import LocalizedStrings from 'react-localization';
@@ -93,6 +97,18 @@ const Home = () => {
     const [currLang, setCurrLang] = useState(cookies.get('lang') ? cookies.get('lang') : strings.getLanguage())
     strings.setLanguage(currLang)
 
+    //use effect hook to get data from cms
+    const [data, setData] = useState([])
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_ADMIN_URL}/Homepage-writeups`)
+        .then((res)=>{
+            setData(res.data);
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }, [])
+
     return ( 
         <div>
             {/* Start main header */}
@@ -142,9 +158,19 @@ const Home = () => {
             {/* Start CCC intro 1 */}
             <div className = "intro-1-container">
                 <div className = "intro-1-writeup">
-                    <h1>{currLang === "EN"? data.key : data.key_cn}</h1>
+                    <h1>
+                        {
+                            data[0] ?
+                            (currLang === "EN"? data[0].title : data[0].title_cn) : 
+                            <Spinner/>
+                        }
+                    </h1>
                     <p>
-                        {currLang === "EN"? data.key_content: data.key_content_cn}
+                        {
+                            data[0] ?
+                            (currLang === "EN"? data[0].content : data[0].content_cn) : 
+                            <Spinner/>
+                        }
                     </p>
                 </div>
             </div>
@@ -153,16 +179,34 @@ const Home = () => {
             {/* Start CCC intro 2 */}
             <div className = "intro-2-container">
                 <div className = "intro-2-writeup">
-                <h1>{currLang === "EN"? data.key : data.key_cn}</h1>
+                <h1>
+                    {
+                        data[0] ?
+                        (currLang === "EN"? data[1].title : data[1].title_cn) : 
+                        <Spinner/>
+                    }  
+                </h1>
                     <p>
-                        {currLang === "EN"? data.key_content: data.key_content_cn}
+                        {
+                            data[0] ?
+                            (currLang === "EN"? data[1].content : data[1].content_cn) : 
+                            <Spinner/>
+                        }
                     </p>
                 </div>
             </div>
             {/* End CCC intro 2 */}
 
             {/* Start Video */}
-            <div className = "video-title"><h1>{currLang === "EN"? data.key : data.key_cn}</h1></div>
+            <div className = "video-title">
+                <h1>
+                    {
+                            data[0] ?
+                            (currLang === "EN"? data[2].title : data[2].title_cn) : 
+                            <Spinner/>
+                    }
+                </h1>
+            </div>
             <div className = "video-container">
                 <Iframe
                 url="https://www.youtube.com/embed/i5gKDdUgbLw"
